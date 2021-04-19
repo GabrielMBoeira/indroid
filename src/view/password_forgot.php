@@ -1,39 +1,6 @@
 <?php
 session_start();
 require_once('template/header_home.php');
-
-require_once('src/db/connection.php');
-require_once('src/functions/functions.php');
-require_once('src/PHPmailer/actionsEmails/sendForgotEmail.php');
-
-
-$conn = newConnection();
-
-if (isset($_POST['password_forgot'])) {
-
-    $email = mysqli_real_escape_string($conn, trim($_POST['email']));
-
-
-    if (existEmail($email)) {
-
-        // GERANDO CHAVE PARA ALTERAÇÃO DE SENHA
-        $hash = newKeyAccess($email);
-
-        // ENVIANDO EMAIL DE RECUPERAÇÃO DE SENHA
-        sendForgotEmail($email, $hash);
-
-        $_SESSION['alter_password-msg'] =  "<div class='alert alert-success' role='alert'>Email de recuperação enviado! <a href='login' class='alert-link'>Login!</a></div>";
-        // header('location: ../../password_forgot');
-    } else {
-
-        $_SESSION['alter_password-msg'] =  "<div class='alert alert-danger mb-3' role='alert'> Email não cadastrado! </div>";
-        // header('location: ../../password_forgot');
-    }
-
-    $conn->close();
-}
-
-
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />
@@ -43,7 +10,7 @@ if (isset($_POST['password_forgot'])) {
     <div class="div-content">
         <div class="container-fluid">
             <div class="row row-form">
-                <form class="form" action="#" method="post">
+                <form class="form" action="src/db/dao_password_forgot.php" method="post">
                     <?php
                     if (isset($_SESSION['alter_password-msg'])) {
                         print_r($_SESSION['alter_password-msg']);

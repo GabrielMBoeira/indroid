@@ -21,13 +21,13 @@ require_once('src/db/connection.php');
                         <label for="email">
                             <strong>E-mail</strong>
                         </label>
-                        <input type="text" class="form-control inputs" name="email" autocomplete="off">
+                        <input type="text" class="form-control inputs" name="email">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="phone">
                             <strong>Telefone</strong>
                         </label>
-                        <input type="text" class="form-control inputs" name="phone" autocomplete="off">
+                        <input type="text" class="form-control inputs" name="phone">
                     </div>
 
                     <div class="btn-content">

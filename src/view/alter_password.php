@@ -36,13 +36,13 @@ $userID = $_SESSION['userID'];
                         <label class="label" for="password">
                             Nova senha:
                         </label>
-                        <input type="password" class="form-control" id="password" name="password" autocomplete="off" required />
+                        <input type="password" class="form-control" id="password" name="password" required />
                     </div>
                     <div class="form-group">
                         <label class="label" for="password_cofirm">
                             Confirmar nova senha:
                         </label>
-                        <input type="password" class="form-control" id="password_cofirm" name="password_cofirm" autocomplete="off" required />
+                        <input type="password" class="form-control" id="password_cofirm" name="password_cofirm" required />
                     </div>
                     <div class="div-button">
                         <button type="submit" class="btn btn-primary btn-sm mt-2" name="user_register">
