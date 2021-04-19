@@ -1,0 +1,108 @@
+main.main .div-content {
+    max-height: 600px;
+    min-width: 30%;
+    padding: 15px;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+}
+
+main.main .form {
+    width: 100%;
+    margin: 10px 20px;
+    color: #fff;
+    font-weight: 400;
+}
+
+main.main .box-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 1.0rem;
+    font-weight: 600;
+    border-bottom: solid 1px #fff;
+}
+
+main.main .label-question {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+main.main .input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main.main .div-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* -------------------------------------------------------------------
+                               Inicio Modal
+------------------------------------------------------------------- */
+
+main .modal-answer {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+main .modal-content {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 3px;
+    border: solid 1px #fff;
+}
+
+main .modal-header {
+    border-bottom: solid 1px #100f0f;
+    background-color: #100f0f;
+    color: #fff;
+}
+
+main .modal-body {
+    background-image: url('../images/robot-model.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+main .box-modal-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+main .box-answer {
+    width: 100%;
+    word-wrap: break-word;
+    padding: 5px;
+    font-weight: bold;
+    background-color: #fff;
+    border-radius: 5px;
+    min-height: 40px;
+}
+
+main .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    border-top: solid 1px #100f0f;
+    background-color: #100f0f;
+    border-radius: 0px 0px 10px 10px;
+}
+
+
+/* -------------------------------------------------------------------
+                               Fim Modal
+------------------------------------------------------------------- */

@@ -1,2 +1,1 @@
-# indroid
-Indroid - Inteligencia Artificial
+

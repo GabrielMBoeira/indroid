@@ -1,0 +1,27 @@
+.form-control:focus {
+    box-shadow: none;
+}
+
+main.main .div-content {
+    height: 600px;
+    width: 1000px;
+    margin: 10px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+main.main .search-box {
+    background-color: rgb(221, 223, 228);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+main.main .btn-content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+}
