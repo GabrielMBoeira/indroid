@@ -5,11 +5,8 @@ require_once('src/db/connection.php');
 
 $conn = newConnection();
 
-
 $email = mysqli_real_escape_string($conn, trim($_POST['email']));
 $phone = mysqli_real_escape_string($conn, trim($_POST['phone']));
-
-
 
 if ($email === '' || $phone === '') {
 
@@ -18,7 +15,6 @@ if ($email === '' || $phone === '') {
     $data['phone'] = 'Vazio';
     $data['status'] = 'Vazio';
 }
-
 
 if (isset($email)) {
 
@@ -48,8 +44,7 @@ if (isset($phone)) {
     }
 }
 
-
-
+$conn->close();
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />
@@ -58,7 +53,6 @@ if (isset($phone)) {
 <main class="main d-flex flex-column">
 
     <div class="div-content">
-
         <div class="search-box">
             <form action="users" method="post" class="form">
                 <div class="row">
@@ -81,9 +75,7 @@ if (isset($phone)) {
                 </div>
             </form>
         </div>
-
         <br>
-
         <div class="table table-responsive-lg">
             <table class="table table-striped">
                 <thead>
@@ -96,19 +88,17 @@ if (isset($phone)) {
                     </tr>
                 </thead>
                 <tbody>
-
                     <tr>
                         <td style="vertical-align: middle;" class="text-truncate"> <?= $data['id_user'] ?> </td>
                         <td style="vertical-align: middle;" class="text-truncate"> <?= $data['email'] ?> </td>
                         <td style="vertical-align: middle;" class="text-truncate"> <?= $data['phone'] ?> </td>
                         <td style="vertical-align: middle;" class="text-truncate"> <?= $data['status'] ?> </td>
                         <td style="vertical-align: middle;" class="text-truncate">
-                            <a href="../../indroid/src/db/dao_liberation.php?id= <?= $data['id_user'] ?>" class="btn btn-success" class="text-truncate">
+                            <a href="../../src/db/dao_liberation.php?id= <?= $data['id_user'] ?>" class="btn btn-success" class="text-truncate">
                                 Liberar
                             </a>
                         </td>
                     </tr>
-
                 </tbody>
             </table>
         </div>
@@ -117,5 +107,4 @@ if (isset($phone)) {
 
 <?php
 require_once('template/footer_admin.php');
-$conn->close();
 ?>

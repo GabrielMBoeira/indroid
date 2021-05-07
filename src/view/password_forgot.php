@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('template/header_home.php');
+
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />

@@ -31,7 +31,7 @@ require_once('template/header_home.php');
                             <br>
                             Santa Catarina / Brasil
                             <br>
-                            E-mail: indroidbot@gmail.com
+                            E-mail: bot@indroid.com.br
                         </i>
                     </div>
                 </div>

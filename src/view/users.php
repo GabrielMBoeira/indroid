@@ -36,9 +36,7 @@ require_once('src/db/connection.php');
                 </div>
             </form>
         </div>
-
         <br>
-
         <div class="table table-responsive-lg">
             <table class="table table-striped">
                 <thead>
@@ -71,7 +69,7 @@ require_once('src/db/connection.php');
                                 <td style="vertical-align: middle;" class="text-truncate"> <?= $row['phone'] ?> </td>
                                 <td style="vertical-align: middle;" class="text-truncate"> <?= $row['status'] ?> </td>
                                 <td style="vertical-align: middle;" class="text-truncate">
-                                    <a href="../../indroid/src/db/dao_liberation.php?id= <?= $row['id_user'] ?>" class="btn btn-success" class="text-truncate">
+                                    <a href="../../src/db/dao_liberation.php?id= <?= $row['id_user'] ?>" class="btn btn-success" class="text-truncate">
                                         Liberar
                                     </a>
                                 </td>

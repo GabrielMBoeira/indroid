@@ -53,7 +53,7 @@ require_once('template/header_home.php');
                             Li o termo e estou ciente
                         </div>
                         <a href="responsability" class="mt-1 text-white" name="responsability">
-                            Acessar Termo de responsabilidade
+                            <strong class="access_term_responsability">Acessar Termo de responsabilidade</strong>
                         </a>
                     </div>
                     <div class="div-button">

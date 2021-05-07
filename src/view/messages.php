@@ -79,7 +79,7 @@ $result = $stmt->get_result();
                         <td style="vertical-align: middle;" class="text-truncate"> <?= $data['email'] ?> </td>
                         <td style="vertical-align: middle;" class="text-truncate"> <?= $data['message'] ?> </td>
                         <td>
-                            <a style="vertical-align: middle;" href="../../indroid/src/db/dao_delete_messages.php?id=<?= $data['id'] ?>" class="btn btn-danger btn-sm">Deletar</a>
+                            <a style="vertical-align: middle;" href="../../src/db/dao_delete_messages.php?id=<?= $data['id'] ?>" class="btn btn-danger btn-sm">Deletar</a>
                         </td>
                     </tr>
 
