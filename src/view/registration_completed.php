@@ -16,15 +16,15 @@ require_once('template/header_home.php');
             </p>
             <p>
                 O <strong> inDROID </strong> é um jogo de perguntas e respostas bem divertido onde o espectador ficará impressionado com o robô adivinhando todas as questões.
-                Estou ciente que quem irá responder as questões sou eu mesmo(a), dando a impressão de que o robô está adivinhando tudo e meus amigos ficarão impressionados. 
+                Quem irá responder as questões será você mesmo dando a impressão de que o robô está adivinhando tudo... Seus amigos ficarão impressionados!!!
             </p>
             <p class="d-flex justify-content-center align-items-center">
                 Conclua o cadastro e experimente!
             </p>
             <div class="d-flex justify-content-center align-items-center">
                 <!-- INICIO DO BOTAO PAGSEGURO -->
-                <a href="https://pag.ae/7WWBFCAM6/button" target="_blank" title="Pagar com PagSeguro">
-                    <img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar-laranja.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                <a href="https://pag.ae/7X7DmM7sH/button" target="_blank" title="Pagar com PagSeguro">
+                    <img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
                 </a>
                 <!-- FIM DO BOTAO PAGSEGURO -->
             </div>

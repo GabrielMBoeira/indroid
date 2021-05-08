@@ -61,7 +61,6 @@ require_once('template/header_home.php');
                             Cadastrar
                         </button>
                     </div>
-
                 </form>
             </div>
         </div>

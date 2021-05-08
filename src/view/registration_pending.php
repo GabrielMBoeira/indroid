@@ -21,8 +21,8 @@ require_once('template/header_home.php');
             </p>
             <div class="d-flex justify-content-center align-items-center">
                 <!-- INICIO DO BOTAO PAGSEGURO -->
-                <a href="https://pag.ae/7WWBFCAM6/button" target="_blank" title="Pagar com PagSeguro">
-                    <img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar-laranja.gif" alt="Pague com PagSeguro - Ã© rÃ¡pido, grÃ¡tis e seguro!" />
+                <a href="https://pag.ae/7X7DmM7sH/button" target="_blank" title="Pagar com PagSeguro">
+                    <img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
                 </a>
                 <!-- FIM DO BOTAO PAGSEGURO -->
             </div>
