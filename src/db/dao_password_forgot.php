@@ -12,10 +12,11 @@ $email = mysqli_real_escape_string($conn, trim($_POST['email']));
 
 if (existEmail($email)) {
 
-    // GERANDO CHAVE PARA ALTERAÇÃO DE SENHA
+    // Gerando chave para alteração de senha
     $hash = newKeyAccess($email);
 
-    sendForgotEmail($email, $hash);
+    // Disparando envio de email para usuário
+    sendForgotEmail($email, $hash); 
 
     $_SESSION['alter_password-msg'] =  "<div class='alert alert-success' role='alert'>Email de recuperação enviado! <a href='login' class='alert-link'>Login!</a></div>";
     header('location: ../../password_forgot');
