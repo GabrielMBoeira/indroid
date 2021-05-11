@@ -16,11 +16,15 @@ if (isset($_POST['login'])) {
     $email = mysqli_real_escape_string($conn, $email);
     $password = mysqli_real_escape_string($conn, $password);
 
+    //Função de redirecionamento caso administrador
+    accessAdm($email, $password);
+
+    //Validação de Password e Senha 
     $checkPass = checkPassword($email, $password);
+
+    //Validação se usuário está ativo
     $userIsActive = userIsActive($email);
 
-    //Fun��o de redirecionamento caso administrador
-    accessAdm($email, $password);
 
     if ($checkPass) {
 

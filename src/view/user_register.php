@@ -26,13 +26,13 @@ require_once('template/header_home.php');
                         <label class="label" for="email">
                             Cadastre seu email:
                         </label>
-                        <input type="email" class="form-control" id="email" name="email" value="" required />
+                        <input type="email" class="form-control" id="email" name="email" required />
                     </div>
                     <div class="form-group">
                         <label class="label" for="phone">
                             Cadastre seu telefone:
                         </label>
-                        <input type="phone" class="form-control" id="phone" name="phone" value="" required />
+                        <input type="phone" class="form-control" id="phone" name="phone" required />
                     </div>
                     <div class="form-group">
                         <label class="label" for="password">

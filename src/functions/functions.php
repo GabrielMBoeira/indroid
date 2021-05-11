@@ -56,21 +56,31 @@ function checkPassword($email, $password)
 
     $conn = newConnection();
 
-    $sql = "SELECT * FROM login WHERE email = ? AND password = ?";
+    $sql = "SELECT * FROM login WHERE email = ?";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ss', $email, $password);
+    $stmt->bind_param('s', $email);
     $stmt->execute();
-
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
+
         $row = $result->fetch_assoc();
+
+        if (password_verify($password, $row['password'])) {
+
+            $data = $row;
+
+        } else {
+
+            $data = null;
+        }
+
     } else {
-        $row = null;
+        $data = null;
     }
 
-    return $row;
+    return $data;
 }
 
 
@@ -208,14 +218,12 @@ function checkKey($email, $hash)
 
         if ($hash === $correctKey) {
             $check = true;
-
         } else {
             $check = false;
             echo 'invalid hash ';
         }
 
         return $check;
-
     } else {
         $dados = null;
     }
