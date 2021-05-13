@@ -70,6 +70,7 @@ $result = $stmt->get_result();
 
                     <?php
                     if ($result->num_rows > 0) {
+                        
                         while ($data = $result->fetch_assoc()) {
 
                     ?>

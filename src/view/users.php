@@ -53,7 +53,7 @@ require_once('src/db/connection.php');
 
                     $conn = newConnection();
 
-                    $sql = "SELECT * FROM login";
+                    $sql = "SELECT * FROM login WHERE status <> 'active'";
 
                     $stmt = $conn->prepare($sql);
                     $stmt->execute();
@@ -70,7 +70,7 @@ require_once('src/db/connection.php');
                                 <td style="vertical-align: middle;" class="text-truncate"> <?= $row['status'] ?> </td>
                                 <td style="vertical-align: middle;" class="text-truncate">
                                     <a href="../../src/db/dao_liberation.php?id= <?= $row['id_user'] ?>" class="btn btn-success" class="text-truncate">
-                                        Liberar
+                                        Liberar e enviar email
                                     </a>
                                 </td>
                             </tr>

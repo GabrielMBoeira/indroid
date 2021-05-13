@@ -230,3 +230,23 @@ function checkKey($email, $hash)
 
     $conn->close();
 }
+
+function getEmailById($id)
+{
+
+    $conn = newConnection();
+
+    $sql = "SELECT email FROM login WHERE id_user = '$id'";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $dados = $result->fetch_assoc();
+    } else {
+        $dados = null;
+    }
+
+    return $dados;
+
+    $conn->close();
+}

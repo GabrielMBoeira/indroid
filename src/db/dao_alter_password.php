@@ -16,8 +16,10 @@ if ($password === $password_confirm) {
 
     $sql = "UPDATE login SET password = ? WHERE id_user = ?";
 
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('si', $password, $userID);
+    $stmt->bind_param('si', $passwordHash, $userID);
 
     if ($stmt->execute()) {
 
