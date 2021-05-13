@@ -187,14 +187,14 @@ function newKeyAccess($email)
 
     $conn = newConnection();
 
-    $sql = "SELECT id_user, password FROM login WHERE email = '$email'";
+    $sql = "SELECT id_user, email FROM login WHERE email = '$email'";
 
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $dados = $result->fetch_assoc();
 
-        $key = sha1($dados['id_user'] . $dados['password']);
+        $key = sha1($dados['id_user'] . $dados['email']);
     }
     return $key;
 
@@ -214,7 +214,7 @@ function checkKey($email, $hash)
     if ($result->num_rows >= 0) {
         $dados = $result->fetch_assoc();
 
-        $correctKey = sha1($dados['id_user'] . $dados['password']);
+        $correctKey = sha1($dados['id_user'] . $dados['email']);
 
         if ($hash === $correctKey) {
             $check = true;

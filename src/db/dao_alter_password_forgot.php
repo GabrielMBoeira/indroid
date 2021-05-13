@@ -13,10 +13,12 @@ $password_confirm = mysqli_real_escape_string($conn, $_POST['password_cofirm']);
 
 if ($password === $password_confirm) {
 
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
     $sql = "UPDATE login SET password = ? WHERE id_user = ?";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('si', $password, $userID);
+    $stmt->bind_param('si', $passwordHash, $userID);
 
     if ($stmt->execute()) {
 
