@@ -19,11 +19,11 @@ require_once('template/header_home.php');
                 Quem irá responder as questões será você mesmo dando a impressão de que o robô está adivinhando tudo... Seus amigos ficarão impressionados!!!
             </p>
             <p class="d-flex justify-content-center align-items-center">
-                Conclua o cadastro e experimente!
+                Clique aqui e experimente!
             </p>
             <div class="d-flex justify-content-center align-items-center">
                 <!-- INICIO DO BOTAO MercadoPago -->
-                <a href="https://mpago.la/1SeeAmD" target="_blank" title="Pagar com mercado pago">
+                <a href="https://mpago.la/1fsvn16" target="_blank" title="Pagar com mercado pago">
                     <img src="src/assets/images/mercado-pago.png" alt="Pague com mercado pago - é rápido, grátis e seguro!" />
                 </a>
                 <!-- FIM DO BOTAO MercadoPago -->
