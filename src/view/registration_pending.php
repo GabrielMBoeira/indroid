@@ -11,7 +11,7 @@ require_once('template/header_home.php');
         <form action="" method="post" class="form">
             <h6 class="d-flex justify-content-center align-items-center mb-4"> Cadastro efetuado com sucesso | Aguardando pagamento </h6>
             <p>
-                Para concluir o cadastro é necessário efetuar o pagamento através do link PagSeguro.
+                Para concluir o cadastro é necessário efetuar o pagamento através do link mercado pago.
             </p>
             <p>
                 O <strong> inDROID </strong> é um jogo de perguntas e respostas bem divertido onde o espectador ficará impressionado com o robô adivinhando todas as questões.
@@ -21,13 +21,13 @@ require_once('template/header_home.php');
             </p>
             <div class="d-flex justify-content-center align-items-center">
                 <!-- INICIO DO BOTAO PAGSEGURO -->
-                <a href="https://pag.ae/7X7DmM7sH/button" target="_blank" title="Pagar com PagSeguro">
-                    <img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" alt="Pague com PagSeguro - � r�pido, gr�tis e seguro!" />
+                <a href="https://mpago.la/1SeeAmD" target="_blank" title="Pagar com mercado pago">
+                    <img src="src/assets/images/mercado-pago.png" alt="Pague com mercado pago - é rápido, grátis e seguro!" />
                 </a>
                 <!-- FIM DO BOTAO PAGSEGURO -->
             </div>
             <p class="info-pay d-flex justify-content-center align-items-center">
-                A segurança do PagSeguro inclui certificação PCI.
+                A segurança do mercado pago inclui certificação PCI.
             </p>
             <p>
                 <u>Liberação de cadastro</u>
@@ -38,8 +38,8 @@ require_once('template/header_home.php');
                 <br>
             </p>
             <p class="info-pay">
-                O PagSeguro: É uma empresa que disponibiliza meios de pagamentos online,
-                sendo líder no mercado brasileiro. Pertence ao grupo UOL e utiliza diversos protocolos de
+                O MercadoPago: É uma empresa que disponibiliza meios de pagamentos online,
+                uma das empresas líder no mercado brasileiro e utiliza diversos protocolos de
                 segurança para manter as informações pessoais seguras onde o vendedor não terá acesso a dados financeiros.
             </p>
         </form>
