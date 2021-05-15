@@ -17,11 +17,11 @@ require_once('template/header_home.php');
                 O <strong> inDROID </strong> é um jogo de perguntas e respostas bem divertido onde o espectador ficará impressionado com o robô adivinhando todas as questões.
             </p>
             <p class="d-flex justify-content-center align-items-center">
-                Conclua o cadastro e experimente!
+                Clique aqui e experimente!
             </p>
             <div class="d-flex justify-content-center align-items-center">
                 <!-- INICIO DO BOTAO PAGSEGURO -->
-                <a href="https://mpago.la/1SeeAmD" target="_blank" title="Pagar com mercado pago">
+                <a href="https://mpago.la/1fsvn16" target="_blank" title="Pagar com mercado pago">
                     <img src="src/assets/images/mercado-pago.png" alt="Pague com mercado pago - é rápido, grátis e seguro!" />
                 </a>
                 <!-- FIM DO BOTAO PAGSEGURO -->
