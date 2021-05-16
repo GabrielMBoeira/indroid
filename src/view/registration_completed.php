@@ -15,7 +15,7 @@ require_once('template/header_home.php');
                 Para concluir o cadastro é necessário efetuar o pagamento através do link do mercado pago.
             </p>
             <p>
-                O <strong> inDROID </strong> é um jogo de perguntas e respostas bem divertido onde o espectador ficará impressionado com o robô adivinhando todas as questões.
+                O <strong> inDROID </strong> é um jogo de perguntas e respostas bem divertido onde o espectador ficará impressionado com o robô adivinhando todas as questões, as informações de uso serão enviadas assim que o cadastro for concluído.
                 Quem irá responder as questões será você mesmo dando a impressão de que o robô está adivinhando tudo... Seus amigos ficarão impressionados!!!
             </p>
             <p class="d-flex justify-content-center align-items-center">
