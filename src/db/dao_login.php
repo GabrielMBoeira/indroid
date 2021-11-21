@@ -1,8 +1,8 @@
 <?php
-session_start();
-require_once('connection.php');
-require_once('../config/accessAdm.php');
-require_once('../functions/functions.php');
+// session_start();
+// require_once('connection.php');
+// require_once('../config/accessAdm.php');
+// require_once('../functions/functions.php');
 
 
 if ($_POST['email'] === "gabrielmboeira@gmail.com" && $_POST['password'] === 'gabriel') {
