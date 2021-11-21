@@ -3,10 +3,10 @@ session_start();
 require_once('template/header.php');
 
     //VALIDANDO SESSÃO
-    if (!isset($_SESSION['userID'])) {
-        header('location: login');
-        die();
-    }
+    // if (!isset($_SESSION['userID'])) {
+    //     header('location: login');
+    //     die();
+    // }
 
 ?>
 
