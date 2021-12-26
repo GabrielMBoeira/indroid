@@ -5,7 +5,7 @@
 // require_once('../functions/functions.php');
 
 
-if ($_POST['email'] === "gabrielmboeira@gmail.com" && $_POST['password'] === 'gabriel') {
+if (($_POST['email'] === "gabrielmboeira@gmail.com" && $_POST['password'] === 'gabriel') || ($_POST['email'] === "gabrielatboeira@gmail.com" && $_POST['password'] === '141211')) {
     header('location: ../../question');
 } else {
     header('location: ../../login');
