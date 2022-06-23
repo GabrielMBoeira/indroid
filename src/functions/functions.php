@@ -6,7 +6,7 @@ function getEmail($email)
 
     $conn = newConnection();
 
-    $sql = "SELECT * FROM login WHERE email = ?";
+    $sql = "SELECT email FROM users WHERE email = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
@@ -21,6 +21,8 @@ function getEmail($email)
     }
 
     return $row;
+
+    $conn->close();
 }
 
 
@@ -28,11 +30,9 @@ function getEmail($email)
 function getIdUser($email)
 {
 
-    $userID = null;
-
     $conn = newConnection();
 
-    $sql = "SELECT id_user FROM login WHERE email = ?";
+    $sql = "SELECT id FROM users WHERE email = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
@@ -42,21 +42,22 @@ function getIdUser($email)
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $userID = $row['id_user'];
+        $userID = $row['id'];
     } else {
         $userID = null;
     }
 
     return $userID;
+
+    $conn->close();
 }
 
 //VALIDANDO SE EMAIL E PASSWORD ESTÃO CORRETOS
 function checkPassword($email, $password)
 {
-
     $conn = newConnection();
 
-    $sql = "SELECT * FROM login WHERE email = ?";
+    $sql = "SELECT * FROM users WHERE email = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
@@ -90,7 +91,7 @@ function confirmPassUser($userID, $pass_current)
 
     $conn = newConnection();
 
-    $sql = "SELECT * FROM login WHERE id_user = ? AND password = ?";
+    $sql = "SELECT * FROM users WHERE id = ? AND password = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('is', $userID, $pass_current);
@@ -124,7 +125,7 @@ function alterPassword($userID, $password)
 
     $conn = newConnection();
 
-    $sql = "UPDATE login SET password = ? WHERE id_user = ?";
+    $sql = "UPDATE users SET password = ? WHERE id = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('si', $password, $userID);
@@ -140,10 +141,9 @@ function alterPassword($userID, $password)
 //VALIDANDO SE USUÁRIO ESTÁ ATIVO
 function userIsActive($email)
 {
-
     $conn = newConnection();
 
-    $sql = "SELECT status FROM login WHERE email = ?";
+    $sql = "SELECT status FROM users WHERE email = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
@@ -165,7 +165,7 @@ function existEmail($email)
 
     $conn = newConnection();
 
-    $sql = "SELECT email FROM login WHERE email = '$email'";
+    $sql = "SELECT email FROM users WHERE email = '$email'";
 
     $result = $conn->query($sql);
 
@@ -187,14 +187,14 @@ function newKeyAccess($email)
 
     $conn = newConnection();
 
-    $sql = "SELECT id_user, email FROM login WHERE email = '$email'";
+    $sql = "SELECT id, email FROM users WHERE email = '$email'";
 
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $dados = $result->fetch_assoc();
 
-        $key = sha1($dados['id_user'] . $dados['email']);
+        $key = sha1($dados['id'] . $dados['email']);
     }
     return $key;
 
@@ -207,14 +207,14 @@ function checkKey($email, $hash)
 
     $conn = newConnection();
 
-    $sql = "SELECT id_user, email, password FROM login WHERE email = '$email'";
+    $sql = "SELECT id, email, password FROM users WHERE email = '$email'";
 
     $result = $conn->query($sql);
 
     if ($result->num_rows >= 0) {
         $dados = $result->fetch_assoc();
 
-        $correctKey = sha1($dados['id_user'] . $dados['email']);
+        $correctKey = sha1($dados['id'] . $dados['email']);
 
         if ($hash === $correctKey) {
             $check = true;
@@ -236,7 +236,7 @@ function getEmailById($id)
 
     $conn = newConnection();
 
-    $sql = "SELECT email FROM login WHERE id_user = '$id'";
+    $sql = "SELECT email FROM users WHERE id = '$id'";
 
     $result = $conn->query($sql);
 
@@ -249,4 +249,25 @@ function getEmailById($id)
     return $dados;
 
     $conn->close();
+}
+
+function getAccessIP() {
+
+    if (isset($_SERVER['HTTP_CLIENT_IP']))
+        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+    else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED'];
+    else if(isset($_SERVER['REMOTE_ADDR']))
+        $ipaddress = $_SERVER['REMOTE_ADDR'];
+    else
+        $ipaddress = 'UNKNOWN';
+
+    return $ipaddress;
+
 }

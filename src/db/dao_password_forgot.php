@@ -1,10 +1,11 @@
 <?php
-
 session_start();
 
 require_once('connection.php');
 require_once('../functions/functions.php');
-require_once('../../vendor/phpmailer/phpmailer/src/actionsEmails/sendForgotEmail.php');
+// require_once('../../vendor/phpmailer/phpmailer/src/actionsEmails/sendForgotEmail.php');
+
+// array(2) { ["email"]=> string(24) "gabrielmboeira@gmail.com" ["password_forgot"]=> string(0) "" }
 
 $conn = newConnection();
 
@@ -16,7 +17,7 @@ if (existEmail($email)) {
     $hash = newKeyAccess($email);
 
     // Disparando envio de email para usuário
-    sendForgotEmail($email, $hash); 
+    // sendForgotEmail($email, $hash);
 
     $_SESSION['alter_password-msg'] =  "<div class='alert alert-success' role='alert'>Email de recuperação enviado! <a href='login' class='alert-link'>Login!</a></div>";
     header('location: ../../password_forgot');

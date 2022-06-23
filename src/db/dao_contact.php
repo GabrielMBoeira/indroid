@@ -31,6 +31,4 @@ if ($stmt->execute()) {
     header('location: ../../contact');
 }
 
-
-
 $conn->close();
