@@ -25,6 +25,56 @@ function getEmail($email)
     $conn->close();
 }
 
+function getUser($id = "", $email = "")
+{
+    $conn = newConnection();
+
+    // $sql = "SELECT * FROM users WHERE email = ?";
+
+    $sql = "SELECT * FROM users WHERE ";
+
+    if ($id != "") {
+        $sql .= 'id = ?';
+    }
+
+    if ($email != "") {
+        $sql .= 'email = ?';
+    }
+
+    if ($id && $email) {
+        $sql .= 'id = ? and email = ?';
+    }
+
+    $stmt = $conn->prepare($sql);
+
+    if ($id) {
+        $stmt->bind_param('i', $id);
+    }
+
+    if ($email) {
+        $stmt->bind_param('s', $email);
+    }
+    
+    if ($id && $email) {
+        $stmt->bind_param('is', $id, $email);
+    }
+
+
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+    } else {
+        $row = null;
+    }
+
+    return $row;
+
+    $conn->close();
+}
+
 
 //RETORNANDO ID DO USUARIO DA BASE DE DADOS
 function getIdUser($email)
@@ -71,12 +121,10 @@ function checkPassword($email, $password)
         if (password_verify($password, $row['password'])) {
 
             $data = $row;
-
         } else {
 
             $data = null;
         }
-
     } else {
         $data = null;
     }
@@ -184,7 +232,6 @@ function existEmail($email)
 //GERAR CHAVE DE ACESSO PARA RECUPERAÇÃO DE SENHA
 function newKeyAccess($email)
 {
-
     $conn = newConnection();
 
     $sql = "SELECT id, email FROM users WHERE email = '$email'";
@@ -196,6 +243,7 @@ function newKeyAccess($email)
 
         $key = sha1($dados['id'] . $dados['email']);
     }
+
     return $key;
 
     $conn->close();
@@ -251,23 +299,23 @@ function getEmailById($id)
     $conn->close();
 }
 
-function getAccessIP() {
+function getAccessIP()
+{
 
     if (isset($_SERVER['HTTP_CLIENT_IP']))
         $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
-    else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+    else if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
         $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    else if(isset($_SERVER['HTTP_X_FORWARDED']))
+    else if (isset($_SERVER['HTTP_X_FORWARDED']))
         $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
-    else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+    else if (isset($_SERVER['HTTP_FORWARDED_FOR']))
         $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
-    else if(isset($_SERVER['HTTP_FORWARDED']))
+    else if (isset($_SERVER['HTTP_FORWARDED']))
         $ipaddress = $_SERVER['HTTP_FORWARDED'];
-    else if(isset($_SERVER['REMOTE_ADDR']))
+    else if (isset($_SERVER['REMOTE_ADDR']))
         $ipaddress = $_SERVER['REMOTE_ADDR'];
     else
         $ipaddress = 'UNKNOWN';
 
     return $ipaddress;
-
 }

@@ -1,4 +1,5 @@
 src/PHPmailer/
 src/config/accessAdm.php
 vendor/
+src/db/connection.php
 

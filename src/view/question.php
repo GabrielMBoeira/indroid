@@ -1,12 +1,33 @@
 <?php
 session_start();
 require_once('template/header.php');
+require_once(dirname(__FILE__, 2) . '/db/connection.php');
+require_once(dirname(__FILE__, 2) . '/functions/functions.php');
 
-    //VALIDANDO SESSÃO
-    // if (!isset($_SESSION['userID'])) {
-    //     header('location: login');
-    //     die();
-    // }
+// VALIDANDO SESSÃO
+if (isset($_SESSION['userID'])) {
+
+    $conn = newConnection();
+    $idUser = mysqli_real_escape_string($conn, $_SESSION['userID']);
+    $idUser = htmlspecialchars($idUser);
+
+    if (getUser($idUser)) {
+        $user = getUser($idUser);
+
+        $user_email = $user['email'];
+        $user_status = $user['status'];
+
+        if ($user_status !== 'active') {
+            header('location: registration_pending');
+        }
+
+    } else {
+        header('location: registration_pending');
+    }
+    
+} else {
+    header('location: login');
+}
 
 ?>
 
@@ -28,7 +49,7 @@ require_once('template/header.php');
                         <strong>Qual é a sua pergunta?</strong>
                     </label>
                     <div class="input-box mt-4">
-                        <textarea name="input-question" class="input-question m-2" id="input-question" cols="80" rows="3" oninput="indroidQuestion(event)" ></textarea>
+                        <textarea name="input-question" class="input-question m-2" id="input-question" cols="80" rows="3" oninput="indroidQuestion(event)"></textarea>
                     </div>
                 </form>
                 <div class="button d-flex justify-content-center w-100">
