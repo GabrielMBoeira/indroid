@@ -159,9 +159,7 @@ function confirmPassUser($userID, $pass_current)
 
 function passwordComparison($password, $confirm_password)
 {
-
     $password === $confirm_password ? $valid = true : $valid = false;
-
     return $valid;
 }
 
@@ -170,7 +168,6 @@ function passwordComparison($password, $confirm_password)
 //ALTERAR PASSWORD
 function alterPassword($userID, $password)
 {
-
     $conn = newConnection();
 
     $sql = "UPDATE users SET password = ? WHERE id = ?";
@@ -210,7 +207,6 @@ function userIsActive($email)
 
 function existEmail($email)
 {
-
     $conn = newConnection();
 
     $sql = "SELECT email FROM users WHERE email = '$email'";
@@ -252,7 +248,6 @@ function newKeyAccess($email)
 //CHECK KEY
 function checkKey($email, $hash)
 {
-
     $conn = newConnection();
 
     $sql = "SELECT id, email, password FROM users WHERE email = '$email'";
@@ -279,9 +274,10 @@ function checkKey($email, $hash)
     $conn->close();
 }
 
+
+//PEGA O EMAIL POR ID
 function getEmailById($id)
 {
-
     $conn = newConnection();
 
     $sql = "SELECT email FROM users WHERE id = '$id'";
@@ -299,9 +295,9 @@ function getEmailById($id)
     $conn->close();
 }
 
+//PEGA O IP DE ACESSO
 function getAccessIP()
 {
-
     if (isset($_SERVER['HTTP_CLIENT_IP']))
         $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
     else if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
@@ -318,4 +314,23 @@ function getAccessIP()
         $ipaddress = 'UNKNOWN';
 
     return $ipaddress;
+}
+
+function setQtdAccessUser($id, $user_qtd_access) {
+
+    $conn = newConnection();
+
+    $qtd = $user_qtd_access + 1;
+
+    $sql = "UPDATE users SET qtd_access = ? WHERE id = ?";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('ii', $qtd, $id);
+
+    if (!$stmt->execute()) {
+        echo "Erro ao acessar o sistema, envie uma mensagem para o adminstrador do sistema!";       
+    }
+
+    $conn->close();
+
 }

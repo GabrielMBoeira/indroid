@@ -14,21 +14,24 @@ if (isset($_SESSION['userID'])) {
     if (getUser($idUser)) {
         $user = getUser($idUser);
 
-        $user_email = $user['email'];
-        $user_status = $user['status'];
+        $user_id         = $user['id'];
+        $user_email      = $user['email'];
+        $user_status     = $user['status'];
+        $user_qtd_access = $user['qtd_access'];
 
-        if ($user_status !== 'active') {
+        if ($user_qtd_access >= 1 && $user_status !== 'active') {
             header('location: registration_pending');
         }
 
+        //Acrescentando quantidade de acessos users
+        setQtdAccessUser($user_id, $user_qtd_access);
     } else {
         header('location: registration_pending');
     }
-    
+
 } else {
     header('location: login');
 }
-
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />
@@ -45,6 +48,7 @@ if (isset($_SESSION['userID'])) {
             </div>
             <div class="box-main">
                 <form id="form">
+                    <input type="hidden" id="status" name="status" value="<?= $user_status; ?>">
                     <label class="label-question mt-3">
                         <strong>Qual é a sua pergunta?</strong>
                     </label>

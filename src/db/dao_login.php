@@ -24,7 +24,7 @@ if (isset($_POST['login'])) {
 
         $userID = $checkPass['id'];
         $_SESSION['userID'] = $userID;
-        $userIsActive['status'] == 'active' ? header('location: ../../question') : header('location: ../../registration_pending');
+        header('location: ../../question');
 
     } else {
 

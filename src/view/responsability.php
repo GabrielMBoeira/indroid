@@ -22,7 +22,7 @@ require_once('template/header_home.php');
                         <br>
                         <br>
                         Todas as perguntas feitas e respondidas serão de minha responsabilidade. Estou ciente também, que as perguntas feitas no quadro de questões NÃO ficarão armazenadas em nenhum banco de dados
-                        e com isso isenta a responsabilidade desta aplicação de prestar esclarecimentos ou afins, para todo e qualquer determinado assunto.
+                        e aplicação será isenta de qualquer responsabilidade sobre as perguntas que forem efetuadas, para todo e qualquer determinado assunto.
                         <br>
                         <br>
                         Eu saliento que não irei fazer questionamento que prejudique ou irá expor meu convidado a nenhum constrangimento de qualquer natureza.

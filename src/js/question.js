@@ -59,13 +59,25 @@ function indroidQuestion(evt) {
 };
 
 //Botão perguntar   
+
+let qtd = 0;
 $("#btn-question").click(function () {
+
+    ////Verificação sobre limite questions caso não esteja ativo
+    qtd++
+    if (qtd >= 10) {
+        let status = document.getElementById('status').value;
+        if (status != 'active') {
+            // window.location.href = "https://google.com.br";
+            window.location.href = "http://localhost/indroid";
+        }
+    } 
 
     var response = ""
 
     if ($("#input-question").val() === "") {
 
-        response = 'Não há pergunta...'
+        response = 'Não há pergunta!...'
 
     } else {
 
