@@ -28,6 +28,46 @@ main.main .div-button {
     align-items: center;
 }
 
+main.main .game:hover {
+    cursor: pointer; 
+    color: #fff;
+    text-decoration: underline;
+}
+
+.modal-content {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    padding: 3px;
+    border: solid 1px #fff;
+    
+}
+
+.modal-header {
+    border-bottom: solid 1px #100f0f;
+    background-color: #100f0f;
+    color: #fff;
+}
+
+
+.box-modal-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    border-top: solid 1px #100f0f;
+    background-color: #100f0f;
+    border-radius: 0px 0px 10px 10px;
+}
+
 /*-------------------------------------------------------------------
 MOBILE 
 -------------------------------------------------------------------*/

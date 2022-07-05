@@ -49,8 +49,13 @@ require_once('template/header_home.php');
 
                     <div class="responsability">
                         <div class="accept">
-                            <input type="checkbox" name="checkbox" required >
+                            <input type="checkbox" name="checkbox" required>
                             Li o termo e estou ciente
+                        </div>
+                        <div>
+                            <a class="mt-1 text-white" name="game">
+                                <strong class="game" onclick="showRule()">Como jogar</strong>
+                            </a>
                         </div>
                         <a href="responsability" class="mt-1 text-white" name="responsability">
                             <strong class="access_term_responsability">Acessar Termo de responsabilidade</strong>
@@ -66,6 +71,34 @@ require_once('template/header_home.php');
         </div>
     </div>
 </main>
+
+<!-- Modal -->
+<div class="modal fade modal-answer" id="answerModal" tabindex="-1" role="dialog" aria-labelledby="answerModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">
+                    <strong><i>Como Jogar!!!</i></strong>
+                </h5>
+            </div>
+            <div class="modal-body">
+                <div class="box-modal-body">
+                    <div class="box-answer" id="box-answer"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" onclick="clearGame()">Entendi!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showRule() {
+        $('#answerModal').modal('show');
+        $('#box-answer').html('<b>Pense em uma pergunta que irá fazer para seu amigo... e em seguida digite a resposta! <br><br> O robô irá gerar uma frase aleatória para que você possa digitar a resposta sem que seu amigo perceba. <br><br> Após digitar a resposta aperte a tecla ponto "." para assumir o controle da pergunta, e a partir daí é só completar a frase e deixar seus amigos impressionados.<b>')
+    }
+</script>
 
 <script>
     $("#phone").mask("(99) 99999.9999");

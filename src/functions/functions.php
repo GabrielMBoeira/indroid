@@ -328,7 +328,8 @@ function setQtdAccessUser($id, $user_qtd_access) {
     $stmt->bind_param('ii', $qtd, $id);
 
     if (!$stmt->execute()) {
-        echo "Erro ao acessar o sistema, envie uma mensagem para o adminstrador do sistema!";       
+        echo "Erro ao acessar o sistema, envie uma mensagem para o adminstrador do sistema!";    
+        die;   
     }
 
     $conn->close();

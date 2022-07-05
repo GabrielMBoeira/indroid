@@ -43,7 +43,8 @@ if ($checkbox === 'on') {
         $userID = getIdUser($email);
         $_SESSION['userID'] = $userID;
 
-        header('location: ../../login');
+        $_SESSION['register_msg'] =  "<div class='alert alert-success m-1' role='alert'>Registro cadastrado com sucesso. <a href='login' class='alert-link'>Acesse Login!</a> </div>";
+        header('location: ../../user_register');
     } else {
 
         $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Entre em contato com suporte </div>";
