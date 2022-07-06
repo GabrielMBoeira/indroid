@@ -3,9 +3,7 @@ session_start();
 session_unset();
 session_destroy();
 
-echo 'aqui';
-
-// require_once('template/header_home.php');
+require_once('template/header_home.php');
 // require_once(dirname(__FILE__, 2) . '/functions/functions.php');
 // require_once(dirname(__FILE__, 2) . '/db/connection.php');
 
