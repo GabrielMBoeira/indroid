@@ -26,7 +26,7 @@ if ($conn) {
 
       <h1 class=" mt-5 ">
          <strong>
-            <i> inDROID </i>
+            <i> inDROIDi </i>
          </strong>
       </h1>
 
