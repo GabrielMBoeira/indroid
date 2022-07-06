@@ -3,20 +3,22 @@ session_start();
 session_unset();
 session_destroy();
 
-require_once('template/header_home.php');
-require_once(dirname(__FILE__, 2) . '/functions/functions.php');
-require_once(dirname(__FILE__, 2) . '/db/connection.php');
+echo 'aqui';
 
-$conn = newConnection();
+// require_once('template/header_home.php');
+// require_once(dirname(__FILE__, 2) . '/functions/functions.php');
+// require_once(dirname(__FILE__, 2) . '/db/connection.php');
 
-if ($conn) {
-   $ipUser = getAccessIP();
+// $conn = newConnection();
 
-   $sql = "INSERT INTO access (ip_user) VALUES (?)";
-   $stmt = $conn->prepare($sql);
-   $stmt->bind_param('s',  $ipUser);
-   $stmt->execute() ? "" : "";
-}
+// if ($conn) {
+//    $ipUser = getAccessIP();
+
+//    $sql = "INSERT INTO access (ip_user) VALUES (?)";
+//    $stmt = $conn->prepare($sql);
+//    $stmt->bind_param('s',  $ipUser);
+//    $stmt->execute() ? "" : "";
+// }
 ?>
 
 <link rel="stylesheet" href="src/assets/css/home.css" />
