@@ -4,7 +4,6 @@ session_start();
 
 require_once('connection.php');
 require_once('../functions/functions.php');
-require_once('../../vendor/phpmailer/phpmailer/src/actionsEmails/sendForgotEmail.php');
 
 $conn = newConnection();
 
@@ -25,7 +24,7 @@ if ($stmt->execute()) {
 
     // Enviando email de Acesso Liberado para Usuário
     if ($status === 'active') {
-        liberationConfirm($emailString);
+        // liberationConfirm($emailString);
     }
 
     header('location: ../../users');

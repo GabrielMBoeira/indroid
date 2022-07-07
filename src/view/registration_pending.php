@@ -21,7 +21,7 @@ require_once('template/header_home.php');
             </p>
             <div class="d-flex justify-content-center align-items-center">
                 <!-- INICIO DO BOTAO PAGSEGURO -->
-                <a href="https://mpago.la/1fsvn16" target="_blank" title="Pagar com mercado pago">
+                <a href="https://mpago.la/2uRNAhL" target="_blank" title="Pagar com mercado pago">
                     <img src="src/assets/images/mercado-pago.png" alt="Pague com mercado pago - é rápido, grátis e seguro!" />
                 </a>
                 <!-- FIM DO BOTAO PAGSEGURO -->
@@ -32,7 +32,7 @@ require_once('template/header_home.php');
             <p>
                 <u>Liberação de cadastro</u>
                 <br>
-                Pagamento com pix 01 (um) dia útil.
+                Pagamento com pix será liberado em instantes.
                 <br>
                 Pagamento com cartão ou boleto 03 (três) dias úteis.
                 <br>

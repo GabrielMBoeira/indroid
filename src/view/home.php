@@ -26,7 +26,7 @@ require_once('template/header_home.php');
 
       <h1 class=" mt-5 ">
          <strong>
-            <i> inDROIDi </i>
+            <i> inDROID</i>
          </strong>
       </h1>
 

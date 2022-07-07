@@ -87,7 +87,7 @@ require_once('template/header_home.php');
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" onclick="clearGame()">Entendi!</button>
+                <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Entendi!</button>
             </div>
         </div>
     </div>

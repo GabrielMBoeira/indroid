@@ -65,11 +65,12 @@ $("#btn-question").click(function () {
 
     ////Verificação sobre limite questions caso não esteja ativo
     qtd++
-    if (qtd >= 10) {
+
+    if (qtd >= 2) {
         let status = document.getElementById('status').value;
+
         if (status != 'active') {
-            // window.location.href = "https://google.com.br";
-            window.location.href = "http://localhost/indroid";
+            window.location.href = "https://localhost/indroid";
         }
     } 
 
