@@ -51,7 +51,16 @@ try {
     $mail->isHTML(true);   //Set email format to HTML
     // $mail->WordWrap = 50;  
     $mail->Subject = utf8_encode('Teste2');
-    $mail->Body    = utf8_encode('Testando HTML <b>Recupera senha!</b>');
+    $mail->Body    = utf8_encode("
+    
+    Testando HTML <br>
+    <b>Recupera senha!</b>
+    <br>
+    <br>
+    <a href='http://localhost/indroid/alter_password_forgot?user=".$email."&key=".$hash."'>Clique aqui para recuperar senha!</a>
+
+    
+    ");
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();

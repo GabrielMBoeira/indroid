@@ -230,14 +230,14 @@ function newKeyAccess($email)
 {
     $conn = newConnection();
 
-    $sql = "SELECT id, email FROM users WHERE email = '$email'";
+    $sql = "SELECT id, email, phone FROM users WHERE email = '$email'";
 
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $dados = $result->fetch_assoc();
 
-        $key = sha1($dados['id'] . $dados['email']);
+        $key = sha1($dados['id'] . $dados['email'] . $dados['phone']);
     }
 
     return $key;
@@ -250,20 +250,20 @@ function checkKey($email, $hash)
 {
     $conn = newConnection();
 
-    $sql = "SELECT id, email, password FROM users WHERE email = '$email'";
+    $sql = "SELECT id, email, phone FROM users WHERE email = '$email'";
 
     $result = $conn->query($sql);
 
     if ($result->num_rows >= 0) {
         $dados = $result->fetch_assoc();
 
-        $correctKey = sha1($dados['id'] . $dados['email']);
+        $correctKey = sha1($dados['id'] . $dados['email'] . $dados['phone']);
 
         if ($hash === $correctKey) {
             $check = true;
         } else {
             $check = false;
-            echo 'invalid hash ';
+            echo 'Invalid hash ';
         }
 
         return $check;

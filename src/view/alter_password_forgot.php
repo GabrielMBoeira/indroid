@@ -11,6 +11,9 @@ if (isset($_GET['user']) && isset($_GET['key'])) {
     $user = mysqli_real_escape_string($conn, htmlspecialchars($_GET['user']));
     $key = mysqli_real_escape_string($conn, htmlspecialchars($_GET['key']));
 
+    $user = htmlspecialchars($user);
+    $key = htmlspecialchars($key);
+
     !existEmail($user) ? header('location: login') : '';
 
     if (checkKey($user, $key)) {

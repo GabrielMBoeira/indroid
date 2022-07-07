@@ -15,7 +15,7 @@ if ($password === $password_confirm) {
 
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "UPDATE login SET password = ? WHERE id_user = ?";
+    $sql = "UPDATE users SET password = ? WHERE id = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('si', $passwordHash, $userID);
