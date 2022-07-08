@@ -3,6 +3,9 @@
 $url = (isset($_GET['url']) ? $_GET['url'] : 'home');
 $url = array_filter(explode('/', $url)); 
 
+var_dump($url);
+die;
+
 $file_url = $url[0].'.php';
 $file_path = 'src/view/'.$file_url;
 
