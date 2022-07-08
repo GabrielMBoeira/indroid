@@ -19,10 +19,15 @@
 // PRODUÇÃO
 // -------------------------------------------------------------------------
 
-function newConnection($banco = 'heroku_8158a15a8674c96') {
-    $servidor = 'us-cdbr-east-06.cleardb.net';
-    $usuario = 'be0146cccd6e81';
-    $senha = '98cc115c';
+$env_file = realpath(dirname(__FILE__, 3) . '/env.ini');
+$env = parse_ini_file($env_file);
+
+$banco = $env['DATABASE'];
+$servidor = $env['DATA_BASE_SERVER'];
+$usuario = $env['DATA_BASE_USER'];
+$senha = $env['DATA_BASE_PASSWORD'];
+
+function newConnection($servidor, $usuario, $senha, $banco) {
 
     $conn = new mysqli($servidor, $usuario, $senha, $banco);
 
