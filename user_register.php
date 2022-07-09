@@ -10,7 +10,7 @@ require_once('header_home.php');
     <div class="div-content">
         <div class="container-fluid">
             <div class="row">
-                <form class="form" action="src/db/dao_user_register.php" method="post">
+                <form class="form" action="dao_user_register.php" method="post">
                     <div class="header-form">
                         <label>
                             Cadastrar Usuário
