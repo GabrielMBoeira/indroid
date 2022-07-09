@@ -7,16 +7,16 @@ require_once('header_home.php');
 require_once('src/functions/functions.php');
 require_once('src/db/connection.php');
 
-$conn = newConnection($env);
+// $conn = newConnection($env);
 
-if ($conn) {
-   $ipUser = getAccessIP();
+// if ($conn) {
+//    $ipUser = getAccessIP();
 
-   $sql = "INSERT INTO access (ip_user) VALUES (?)";
-   $stmt = $conn->prepare($sql);
-   $stmt->bind_param('s',  $ipUser);
-   $stmt->execute() ? "" : "";
-}
+//    $sql = "INSERT INTO access (ip_user) VALUES (?)";
+//    $stmt = $conn->prepare($sql);
+//    $stmt->bind_param('s',  $ipUser);
+//    $stmt->execute() ? "" : "";
+// }
 
 ?>
 
