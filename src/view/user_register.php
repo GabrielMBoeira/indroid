@@ -10,7 +10,7 @@ require_once('template/header_home.php');
     <div class="div-content">
         <div class="container-fluid">
             <div class="row">
-                <form class="form" action="src/db/dao_user_register.php" method="post">
+                <form class="form" action="dao_user_register" method="post">
                     <div class="header-form">
                         <label>
                             Cadastrar Usuário
@@ -96,7 +96,7 @@ require_once('template/header_home.php');
 <script>
     function showRule() {
         $('#answerModal').modal('show');
-        $('#box-answer').html('<b>Pense em uma pergunta que irá fazer para seu amigo... e em seguida digite a resposta! <br><br> O robô irá gerar uma frase aleatória para que você possa digitar a resposta sem que seu amigo perceba. <br><br> Após digitar a resposta aperte a tecla ponto "." para assumir o controle da pergunta, e a partir daí é só completar a frase e deixar seus amigos impressionados.<b>')
+        $('#box-answer').html('<b>Pense em uma pergunta que irá¡ fazer para seu amigo... e em seguida digite a resposta! <br><br> O robô irá gerar uma frase aleatória para que você possa digitar a resposta sem que seu amigo perceba. <br><br> Após digitar a resposta aperte a tecla ponto "." para assumir o controle da pergunta, e a partir daí é só completar a frase e deixar seus amigos impressionados.<b>')
     }
 </script>
 
