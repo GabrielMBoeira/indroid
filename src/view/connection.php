@@ -1,44 +1,42 @@
 <?php
 
-function newConnection($banco = 'indroid') {
-    $servidor = 'localhost';
-    $usuario = 'root';
-    $senha = '';
+// function newConnection($banco = 'indroid') {
+//     $servidor = 'localhost';
+//     $usuario = 'root';
+//     $senha = '';
 
-    $conn = new mysqli($servidor, $usuario, $senha, $banco);
+//     $conn = new mysqli($servidor, $usuario, $senha, $banco);
 
-    if($conn->connect_error) {
-        die('Erro: ' . $conn->connect_error);
-    }
+//     if($conn->connect_error) {
+//         die('Erro: ' . $conn->connect_error);
+//     }
 
-    return $conn;
-}
+//     return $conn;
+// }
 
 
 // -------------------------------------------------------------------------
 // PRODUÇÃO
 // -------------------------------------------------------------------------
 
-// $env_file = realpath(dirname(__FILE__, 3) . '/env.ini');
-// $env = parse_ini_file($env_file);
+$env_file = realpath(dirname(__FILE__, 3) . '/env.ini');
+$env = parse_ini_file($env_file);
 
 
+function newConnection($env = "")
+{
+
+    $banco = $env['DATABASE'];
+    $servidor = $env['DATA_BASE_SERVER'];
+    $usuario = $env['DATA_BASE_USER'];
+    $senha = $env['DATA_BASE_PASSWORD'];
 
 
-// function newConnection($env = "")
-// {
+    $conn = new mysqli($servidor, $usuario, $senha, $banco);
 
-//     $banco = $env['DATABASE'];
-//     $servidor = $env['DATA_BASE_SERVER'];
-//     $usuario = $env['DATA_BASE_USER'];
-//     $senha = $env['DATA_BASE_PASSWORD'];
+    if ($conn->connect_error) {
+        die('Erro: ' . $conn->connect_error);
+    }
 
-
-//     $conn = new mysqli($servidor, $usuario, $senha, $banco);
-
-//     if ($conn->connect_error) {
-//         die('Erro: ' . $conn->connect_error);
-//     }
-
-//     return $conn;
-// }
+    return $conn;
+}
