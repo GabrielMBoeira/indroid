@@ -5,12 +5,12 @@ session_start();
 require_once('connection.php');
 require_once('../functions/functions.php');
 
-$conn = newConnection();
+$conn = newConnection($env);
 
 $userID = mysqli_real_escape_string($conn, $_GET['id']);
 $status = 'active';
 
-$email = getEmailById($userID);
+$email = getEmailById($userID, $env);
 $emailString =  implode('"', $email);  
 
 $sql = "UPDATE login SET status = ? WHERE id_user = ? ";

@@ -5,7 +5,7 @@ session_start();
 require_once('connection.php');
 require_once('../functions/functions.php');
 
-$conn = newConnection();
+$conn = newConnection($env);
 
 $idMessage = mysqli_real_escape_string($conn, $_GET['id']);
 

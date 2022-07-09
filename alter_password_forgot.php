@@ -4,7 +4,7 @@ require_once('./src/db/connection.php');
 require_once('./src/functions/functions.php');
 require_once('template/header_home.php');
 
-$conn = newConnection();
+$conn = newConnection($env);
 
 if (isset($_GET['user']) && isset($_GET['key'])) {
 
@@ -14,11 +14,11 @@ if (isset($_GET['user']) && isset($_GET['key'])) {
     $user = htmlspecialchars($user);
     $key = htmlspecialchars($key);
 
-    !existEmail($user) ? header('location: login') : '';
+    !existEmail($user, $env) ? header('location: login') : '';
 
-    if (checkKey($user, $key)) {
+    if (checkKey($user, $key, $env)) {
 
-        $userID = getIdUser($user);
+        $userID = getIdUser($user, $env);
     }
 }
 

@@ -1,10 +1,10 @@
 <?php
 
 //RETORNANDO EMAIL DO USUARIO DA BASE DE DADOS
-function getEmail($email)
+function getEmail($email, $env)
 {
 
-    $conn = newConnection();
+    $conn = newConnection($env);
 
     $sql = "SELECT email FROM users WHERE email = ?";
 
@@ -25,9 +25,9 @@ function getEmail($email)
     $conn->close();
 }
 
-function getUser($id = "", $email = "")
+function getUser($id = "", $email = "", $env)
 {
-    $conn = newConnection();
+    $conn = newConnection($env);
 
     // $sql = "SELECT * FROM users WHERE email = ?";
 
@@ -77,10 +77,10 @@ function getUser($id = "", $email = "")
 
 
 //RETORNANDO ID DO USUARIO DA BASE DE DADOS
-function getIdUser($email)
+function getIdUser($email, $env)
 {
 
-    $conn = newConnection();
+    $conn = newConnection($env);
 
     $sql = "SELECT id FROM users WHERE email = ?";
 
@@ -103,9 +103,9 @@ function getIdUser($email)
 }
 
 //VALIDANDO SE EMAIL E PASSWORD ESTÃO CORRETOS
-function checkPassword($email, $password)
+function checkPassword($email, $password, $env)
 {
-    $conn = newConnection();
+    $conn = newConnection($env);
 
     $sql = "SELECT * FROM users WHERE email = ?";
 
@@ -134,10 +134,10 @@ function checkPassword($email, $password)
 
 
 //VALIDANDO SE EMAIL E PASSWORD ESTÃO CORRETOS
-function confirmPassUser($userID, $pass_current)
+function confirmPassUser($userID, $pass_current, $env)
 {
 
-    $conn = newConnection();
+    $conn = newConnection($env);
 
     $sql = "SELECT * FROM users WHERE id = ? AND password = ?";
 
@@ -166,9 +166,9 @@ function passwordComparison($password, $confirm_password)
 
 
 //ALTERAR PASSWORD
-function alterPassword($userID, $password)
+function alterPassword($userID, $password, $env)
 {
-    $conn = newConnection();
+    $conn = newConnection($env);
 
     $sql = "UPDATE users SET password = ? WHERE id = ?";
 
@@ -184,9 +184,9 @@ function alterPassword($userID, $password)
 
 
 //VALIDANDO SE USUÁRIO ESTÁ ATIVO
-function userIsActive($email)
+function userIsActive($email, $env)
 {
-    $conn = newConnection();
+    $conn = newConnection($env);
 
     $sql = "SELECT status FROM users WHERE email = ?";
 
@@ -205,9 +205,9 @@ function userIsActive($email)
     return $row;
 }
 
-function existEmail($email)
+function existEmail($email, $env)
 {
-    $conn = newConnection();
+    $conn = newConnection($env);
 
     $sql = "SELECT email FROM users WHERE email = '$email'";
 
@@ -226,9 +226,9 @@ function existEmail($email)
 
 
 //GERAR CHAVE DE ACESSO PARA RECUPERAÇÃO DE SENHA
-function newKeyAccess($email)
+function newKeyAccess($email, $env)
 {
-    $conn = newConnection();
+    $conn = newConnection($env);
 
     $sql = "SELECT id, email, phone FROM users WHERE email = '$email'";
 
@@ -246,9 +246,9 @@ function newKeyAccess($email)
 }
 
 //CHECK KEY
-function checkKey($email, $hash)
+function checkKey($email, $hash, $env)
 {
-    $conn = newConnection();
+    $conn = newConnection($env);
 
     $sql = "SELECT id, email, phone FROM users WHERE email = '$email'";
 
@@ -276,9 +276,9 @@ function checkKey($email, $hash)
 
 
 //PEGA O EMAIL POR ID
-function getEmailById($id)
+function getEmailById($id, $env)
 {
-    $conn = newConnection();
+    $conn = newConnection($env);
 
     $sql = "SELECT email FROM users WHERE id = '$id'";
 
@@ -316,9 +316,9 @@ function getAccessIP()
     return $ipaddress;
 }
 
-function setQtdAccessUser($id, $user_qtd_access) {
+function setQtdAccessUser($id, $user_qtd_access, $env) {
 
-    $conn = newConnection();
+    $conn = newConnection($env);
 
     $qtd = $user_qtd_access + 1;
 

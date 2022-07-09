@@ -3,7 +3,7 @@ session_start();
 require_once('template/header_admin.php');
 require_once('src/db/connection.php');
 
-$conn = newConnection();
+$conn = newConnection($env);
 
 $data = '';
 $status = 'pending';

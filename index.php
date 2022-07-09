@@ -7,7 +7,7 @@ require_once(dirname(__FILE__) . '/header_home.php');
 // require_once(dirname(__FILE__, 2) . '/functions/functions.php');
 // require_once(dirname(__FILE__, 2) . '/db/connection.php');
 
-// $conn = newConnection();
+// $conn = newConnection($env);
 
 // if ($conn) {
 //    $ipUser = getAccessIP();

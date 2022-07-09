@@ -7,12 +7,12 @@ require_once(dirname(__FILE__, 2) . '/functions/functions.php');
 // VALIDANDO SESSÃO
 if (isset($_SESSION['userID'])) {
 
-    $conn = newConnection();
+    $conn = newConnection($env);
     $idUser = mysqli_real_escape_string($conn, $_SESSION['userID']);
     $idUser = htmlspecialchars($idUser);
 
-    if (getUser($idUser)) {
-        $user = getUser($idUser);
+    if (getUser($idUser, "", $env)) {
+        $user = getUser($idUser, "", $env);
 
         $user_id         = $user['id'];
         $user_email      = $user['email'];
@@ -24,7 +24,7 @@ if (isset($_SESSION['userID'])) {
         }
 
         //Acrescentando quantidade de acessos users
-        setQtdAccessUser($user_id, $user_qtd_access);
+        setQtdAccessUser($user_id, $user_qtd_access, $env);
     } else {
         header('location: registration_pending');
     }

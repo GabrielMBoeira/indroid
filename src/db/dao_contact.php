@@ -4,7 +4,7 @@ session_start();
 require_once('connection.php');
 require_once('../functions/functions.php');
 
-$conn = newConnection();
+$conn = newConnection($env);
 
 $email = mysqli_real_escape_string($conn, trim($_POST['email']));
 $message = mysqli_real_escape_string($conn, trim($_POST['message']));

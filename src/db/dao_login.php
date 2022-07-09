@@ -5,7 +5,7 @@ require_once('../functions/functions.php');
 
 if (isset($_POST['login'])) {
 
-    $conn = newConnection();
+    $conn = newConnection($env);
 
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);
@@ -14,10 +14,10 @@ if (isset($_POST['login'])) {
     $password = mysqli_real_escape_string($conn, $password);
 
     //Validação de Password e Senha 
-    $checkPass = checkPassword($email, $password);
+    $checkPass = checkPassword($email, $password, $env);
 
     //Validação se usuário está ativo
-    $userIsActive = userIsActive($email);
+    $userIsActive = userIsActive($email, $env);
 
 
     if ($checkPass) {
