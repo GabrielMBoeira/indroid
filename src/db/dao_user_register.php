@@ -18,12 +18,12 @@ $email_exist = getEmail($email);
 
 if ($email_exist) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
-    header('location: ../../user_register');
+    header('location: ../../user_register.php');
 }
 
 if ($password !== $password_confirm) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Senhas não conferem! </div>";
-    header('location: ../../user_register');
+    header('location: ../../user_register.php');
 }
 
 if ($checkbox === 'on') {
@@ -44,16 +44,16 @@ if ($checkbox === 'on') {
         $_SESSION['userID'] = $userID;
 
         $_SESSION['register_msg'] =  "<div class='alert alert-success m-1' role='alert'>Registro cadastrado com sucesso. <a href='login' class='alert-link'>Acesse Login!</a> </div>";
-        header('location: ../../user_register');
+        header('location: ../../user_register.php');
     } else {
 
         $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Entre em contato com suporte </div>";
-        header('location: ../../user_register');
+        header('location: ../../user_register.php');
     }
 } else {
 
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Senhas não conferem ou e-mail já cadastrado </div>";
-    header('location: ../../user_register');
+    header('location: ../../user_register.php');
 }
 
 $conn->close();

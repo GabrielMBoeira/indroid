@@ -34,13 +34,13 @@
                   <a class="nav-link" href="home">Home</a>
                </li>
                <li class="nav-item active  mr-2">
-                  <a class="nav-link" href="user_register">Cadastrar usuário</a>
+                  <a class="nav-link" href="user_register.php">Cadastrar usuário</a>
                </li>
                <li class="nav-item active mr-2">
-                  <a class="nav-link" href="contact">Contato</a>
+                  <a class="nav-link" href="contact.php">Contato</a>
                </li>
                <li class="nav-item active mr-4">
-                  <a class="nav-link" href="login"><strong>Login</strong></a>
+                  <a class="nav-link" href="login.php"><strong>Login</strong></a>
                </li>
             </ul>
          </div>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('template/header_home.php');
+require_once('header_home.php');
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />
@@ -10,7 +10,7 @@ require_once('template/header_home.php');
     <div class="div-content">
         <div class="container-fluid">
             <div class="row">
-                <form class="form" action="dao_user_register" method="post">
+                <form class="form" action="src/db/dao_user_register.php" method="post">
                     <div class="header-form">
                         <label>
                             Cadastrar Usuário
@@ -105,5 +105,5 @@ require_once('template/header_home.php');
 </script>
 
 <?php
-require_once('template/footer_home.php');
+require_once('footer_home.php');
 ?>
