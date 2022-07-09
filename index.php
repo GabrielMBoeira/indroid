@@ -27,7 +27,7 @@ require_once(dirname(__FILE__) . '/header_home.php');
 
       <h1 class=" mt-5 ">
          <strong>
-            <i> inDROID</i>
+            <i> inDROIDe</i>
          </strong>
       </h1>
 
