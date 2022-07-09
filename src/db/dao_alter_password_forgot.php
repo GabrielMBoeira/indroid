@@ -22,20 +22,20 @@ if ($password === $password_confirm) {
 
     if ($stmt->execute()) {
 
-        $_SESSION['alter_password-forgot-msg'] =  "<div class='alert alert-success m-1' role='alert'> Senha alterada com sucesso. <a href='login' class='alert-link'>Acesse Login!</a> </div>";
-        header('location: ../../alter_password_forgot');
+        $_SESSION['alter_password-forgot-msg'] =  "<div class='alert alert-success m-1' role='alert'> Senha alterada com sucesso. <a href='login.php' class='alert-link'>Acesse Login!</a> </div>";
+        header('location: ../../alter_password_forgot.php');
 
     } else {
 
         $_SESSION['alter_password-forgot-msg'] =  "<div class='alert alert-danger m-1' role='alert'> Erro ao alterar senha! </div>";
-        header('location: ../../alter_password_forgot');
+        header('location: ../../alter_password_forgot.php');
 
     }
 
 } else {
 
     $_SESSION['alter_password-forgot-msg'] =  "<div class='alert alert-danger m-1' role='alert'> Senhas não conferem! </div>";
-    header('location: ../../alter_password_forgot');
+    header('location: ../../alter_password_forgot.php');
     
 }
 

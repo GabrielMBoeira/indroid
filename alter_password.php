@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once('template/header.php');
-require_once(dirname(__FILE__, 2) . '/db/connection.php');
-require_once(dirname(__FILE__, 2) . '/functions/functions.php');
+require_once('header.php');
+require_once('src/db/connection.php');
+require_once('src/functions/functions.php');
 
 // VALIDANDO SESSÃO
 if (isset($_SESSION['userID'])) {
@@ -18,15 +18,15 @@ if (isset($_SESSION['userID'])) {
         $user_status = $user['status'];
 
         if ($user_status !== 'active') {
-            header('location: registration_pending');
+            header('location: registration_pending.php');
         }
 
     } else {
-        header('location: registration_pending');
+        header('location: registration_pending.php');
     }
     
 } else {
-    header('location: login');
+    header('location: login.php');
 }
 
 ?>
@@ -76,5 +76,5 @@ if (isset($_SESSION['userID'])) {
 </main>
 
 <?php
-require_once('template/footer_home.php');
+require_once('footer_home.php');
 ?>

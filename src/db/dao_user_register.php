@@ -17,8 +17,6 @@ $status = 'pending';
 //Verificando se email já é existente
 $email_exist = getEmail($email, $env);
 
-var_dump($email_exist);
-die;
 
 if ($email_exist) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
@@ -47,7 +45,7 @@ if ($checkbox === 'on') {
         $userID = getIdUser($email, $env);
         $_SESSION['userID'] = $userID;
 
-        $_SESSION['register_msg'] =  "<div class='alert alert-success m-1' role='alert'>Registro cadastrado com sucesso. <a href='login' class='alert-link'>Acesse Login!</a> </div>";
+        $_SESSION['register_msg'] =  "<div class='alert alert-success m-1' role='alert'>Registro cadastrado com sucesso. <a href='login.php' class='alert-link'>Acesse Login!</a> </div>";
         header('location: ../../user_register.php');
     } else {
 

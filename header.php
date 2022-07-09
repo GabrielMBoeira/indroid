@@ -21,7 +21,7 @@
 
   <header class="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="home">
+      <a class="navbar-brand" href="index.php">
         <strong> inDROID </strong>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#content-nav" aria-controls="content-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,14 +35,14 @@
               Minha conta
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="alter_password">Alterar Senha</a>
+              <a class="dropdown-item" href="alter_password.php">Alterar Senha</a>
             </div>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="question">Perguntar</a>
+            <a class="nav-link" href="question.php">Perguntar</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="logout">Sair</a>
+            <a class="nav-link" href="logout.php">Sair</a>
           </li>
         </ul>
       </div>

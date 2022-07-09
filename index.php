@@ -4,6 +4,11 @@ session_unset();
 session_destroy();
 
 require_once(dirname(__FILE__) . '/header_home.php');
+
+print '<pre>';
+var_dump($_SERVER);
+die;
+
 // require_once(dirname(__FILE__, 2) . '/functions/functions.php');
 // require_once(dirname(__FILE__, 2) . '/db/connection.php');
 
@@ -44,7 +49,7 @@ require_once(dirname(__FILE__) . '/header_home.php');
          <strong><i>Experimente e impressione seu amigos!</i></strong>
       </div>
       <div class="mt-5">
-         <a href="user_register" class="btn btn-primary"> Use sua imaginação! <small>(Clique aqui)</small></a>
+         <a href="user_register.php" class="btn btn-primary"> Use sua imaginação! <small>(Clique aqui)</small></a>
       </div>
    </div>
 </main>

@@ -24,12 +24,12 @@ if (isset($_POST['login'])) {
 
         $userID = $checkPass['id'];
         $_SESSION['userID'] = $userID;
-        header('location: ../../question');
+        header('location: ../../question.php');
 
     } else {
 
         $_SESSION['login_msg'] =  "<div class='alert alert-msg-login alert-danger m-1' role='alert'> Email não cadastrado ou senha incorreta! </div>";
-        header('location: ../../login');
+        header('location: ../../login.php');
         
     }
 

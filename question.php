@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once('template/header.php');
-require_once(dirname(__FILE__, 2) . '/db/connection.php');
-require_once(dirname(__FILE__, 2) . '/functions/functions.php');
+require_once('header.php');
+require_once('src/db/connection.php');
+require_once('src/functions/functions.php');
 
 // VALIDANDO SESSÃO
 if (isset($_SESSION['userID'])) {
@@ -20,17 +20,17 @@ if (isset($_SESSION['userID'])) {
         $user_qtd_access = $user['qtd_access'];
 
         if ($user_qtd_access >= 1 && $user_status !== 'active') {
-            header('location: registration_pending');
+            header('location: registration_pending.php');
         }
 
         //Acrescentando quantidade de acessos users
         setQtdAccessUser($user_id, $user_qtd_access, $env);
     } else {
-        header('location: registration_pending');
+        header('location: registration_pending.php');
     }
 
 } else {
-    header('location: login');
+    header('location: login.php');
 }
 ?>
 
@@ -91,5 +91,5 @@ if (isset($_SESSION['userID'])) {
 <script src="src/js/question.js"></script>
 
 <?php
-require_once('template/footer.php');
+require_once('footer.php');
 ?>

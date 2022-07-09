@@ -70,7 +70,7 @@ $("#btn-question").click(function () {
         let status = document.getElementById('status').value;
 
         if (status != 'active') {
-            window.location.href = "https://localhost/indroid";
+            window.location.href = "https://www.indroid.com.br";
         }
     } 
 

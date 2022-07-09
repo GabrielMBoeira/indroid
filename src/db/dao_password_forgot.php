@@ -22,11 +22,11 @@ if (isset($_POST['password_forgot'])) {
             echo 'Email não eniado! Erro no servidor de e-mail. Entrar em contato com suporte!';
         } 
 
-        $_SESSION['alter_password-msg'] =  "<div class='alert alert-success' role='alert'>Email de recuperação de senha enviado! <a href='login' class='alert-link'>Login!</a></div>";
-        header('location: ../../password_forgot');
+        $_SESSION['alter_password-msg'] =  "<div class='alert alert-success' role='alert'>Email de recuperação de senha enviado! <a href='login.php' class='alert-link'>Login!</a></div>";
+        header('location: ../../password_forgot.php');
     } else {
         $_SESSION['alter_password-msg'] =  "<div class='alert alert-danger mb-3' role='alert'> Email não cadastrado!! </div>";
-        header('location: ../../password_forgot');
+        header('location: ../../password_forgot.php');
     }
 
     $conn->close();

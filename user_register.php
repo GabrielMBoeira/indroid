@@ -57,7 +57,7 @@ require_once('header_home.php');
                                 <strong class="game" onclick="showRule()">Como jogar</strong>
                             </a>
                         </div>
-                        <a href="responsability" class="mt-1 text-white" name="responsability">
+                        <a href="responsability.php" class="mt-1 text-white" name="responsability">
                             <strong class="access_term_responsability">Acessar Termo de responsabilidade</strong>
                         </a>
                     </div>

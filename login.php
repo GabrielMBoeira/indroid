@@ -20,7 +20,7 @@ require_once('header_home.php');
                   <label class="label" for="email">
                      E-mail:
                   </label>
-                  <input type="email" class="form-control" id="email" name="email" required />
+                  <input type="email" class="form-control" id="email" name="email" required autocomplete="on"/>
                </div>
                <div class="form-group">
                   <label class="label" for="password">
@@ -29,7 +29,7 @@ require_once('header_home.php');
                   <input type="password" class="form-control" id="password" name="password" required />
                </div>
                <div class="div-button">
-                  <a type="submit" href="password_forgot" class="btn btn-success btn-sm mt-4" name="password_forgo">
+                  <a type="submit" href="password_forgot.php" class="btn btn-success btn-sm mt-4" name="password_forgo">
                      Esqueci a senha
                   </a>
                   <button type="submit" class="btn btn-primary btn-sm mt-4" name="login">

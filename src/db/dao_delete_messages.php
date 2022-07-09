@@ -20,12 +20,12 @@ $stmt ->bind_param('i', $idMessage);
 
 if ($stmt->execute()) {
 
-    header('location: ../../messages');
+    header('location: ../../messages.php');
 
 } else {
 
     $_SESSION['messages-msg'] =  "<div class='alert alert-danger' role='alert'> Não foi possível deletar, acionar suporte. </div>";
-    header('location: ../../messages');
+    header('location: ../../messages.php');
 
 }
 

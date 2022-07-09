@@ -2,7 +2,7 @@
 session_start();
 require_once('./src/db/connection.php');
 require_once('./src/functions/functions.php');
-require_once('template/header_home.php');
+require_once('header_home.php');
 
 $conn = newConnection($env);
 
@@ -14,7 +14,7 @@ if (isset($_GET['user']) && isset($_GET['key'])) {
     $user = htmlspecialchars($user);
     $key = htmlspecialchars($key);
 
-    !existEmail($user, $env) ? header('location: login') : '';
+    !existEmail($user, $env) ? header('location: login.php') : '';
 
     if (checkKey($user, $key, $env)) {
 
@@ -69,5 +69,5 @@ if (isset($_GET['user']) && isset($_GET['key'])) {
 </main>
 
 <?php
-require_once('template/footer_home.php');
+require_once('footer_home.php');
 ?>

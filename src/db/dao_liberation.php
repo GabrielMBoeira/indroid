@@ -27,11 +27,11 @@ if ($stmt->execute()) {
         // liberationConfirm($emailString);
     }
 
-    header('location: ../../users');
+    header('location: ../../users.php');
 } else {
 
     $_SESSION['liberation-msg'] =  "<div class='alert alert-danger' role='alert'> Erro ao liberar, veirificar com suporte </div>";
-    header('location: ../../users');
+    header('location: ../../users.php');
 }
 
 $conn->close();
