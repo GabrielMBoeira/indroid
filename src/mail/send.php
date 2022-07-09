@@ -73,7 +73,7 @@ function sendForgotEmail($email, $hash)
             <p>
                 <i>Link para alteração de senha: </i>
                 <br>
-                <a href='http://".$_SERVER['HTTP_HOST']."/indroid/alter_password_forgot.php?user=" . $email . "&key=" . $hash . "'>Clique aqui para recuperar senha!</a>
+                <a href='http://".$_SERVER['HTTP_HOST']."/alter_password_forgot.php?user=" . $email . "&key=" . $hash . "'>Clique aqui para recuperar senha!</a>
                 <br>
             </p>
             <h5>
@@ -90,6 +90,6 @@ function sendForgotEmail($email, $hash)
         $mail->send();
         echo utf8_encode("Mensagem enviada com sucesso para $email_to!");
     } catch (Exception $e) {
-        echo utf8_encode("Mensagem n�o pode ser enviada para $email_to!. Mailer Error: {$mail->ErrorInfo}");
+        echo utf8_encode("Mensagem não pode ser enviada para $email_to!. Mailer Error: {$mail->ErrorInfo}");
     }
 }

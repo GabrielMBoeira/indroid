@@ -4,24 +4,20 @@ session_unset();
 session_destroy();
 
 require_once(dirname(__FILE__) . '/header_home.php');
+require_once('src/functions/functions.php');
+require_once('src/db/connection.php');
 
-print '<pre>';
-var_dump($_SERVER);
-die;
+$conn = newConnection($env);
 
-// require_once(dirname(__FILE__, 2) . '/functions/functions.php');
-// require_once(dirname(__FILE__, 2) . '/db/connection.php');
+if ($conn) {
+   $ipUser = getAccessIP();
 
-// $conn = newConnection($env);
+   $sql = "INSERT INTO access (ip_user) VALUES (?)";
+   $stmt = $conn->prepare($sql);
+   $stmt->bind_param('s',  $ipUser);
+   $stmt->execute() ? "" : "";
+}
 
-// if ($conn) {
-//    $ipUser = getAccessIP();
-
-//    $sql = "INSERT INTO access (ip_user) VALUES (?)";
-//    $stmt = $conn->prepare($sql);
-//    $stmt->bind_param('s',  $ipUser);
-//    $stmt->execute() ? "" : "";
-// }
 ?>
 
 <link rel="stylesheet" href="src/assets/css/home.css" />
