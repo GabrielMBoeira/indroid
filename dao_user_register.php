@@ -16,6 +16,11 @@ $status = 'pending';
 //Verificando se email já é existente
 $email_exist = getEmail($email, $env);
 
+var_dump($email);
+echo '<br>';
+var_dump($email_exist);
+die;
+    
 if ($email_exist) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
     header('location: user_register.php');
