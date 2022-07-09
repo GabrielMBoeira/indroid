@@ -3,7 +3,7 @@ session_start();
 session_unset();
 session_destroy();
 
-require_once(dirname(__FILE__) . '/header_home.php');
+require_once('header_home.php');
 require_once('src/functions/functions.php');
 require_once('src/db/connection.php');
 
