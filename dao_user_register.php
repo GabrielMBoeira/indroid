@@ -1,64 +1,59 @@
 <?php
 session_start();
 
-// require_once(dirname(__FILE__) . '/connection.php');
-// require_once(dirname(__FILE__) . '/dao_user_register.php');
+require_once(dirname(__FILE__) . '/connection.php');
+require_once(dirname(__FILE__) . '/dao_user_register.php');
 
-// $conn = newConnection($env);
+$conn = newConnection($env);
 
-// $email = mysqli_real_escape_string($conn, $_POST['email']);
-// $phone = mysqli_real_escape_string($conn, $_POST['phone']);
-// $password = mysqli_real_escape_string($conn, $_POST['password']);
-// $password_confirm = mysqli_real_escape_string($conn, $_POST['password_cofirm']);
-// $checkbox = mysqli_real_escape_string($conn, $_POST['checkbox']);
-// $status = 'pending';
+$email = mysqli_real_escape_string($conn, $_POST['email']);
+$phone = mysqli_real_escape_string($conn, $_POST['phone']);
+$password = mysqli_real_escape_string($conn, $_POST['password']);
+$password_confirm = mysqli_real_escape_string($conn, $_POST['password_cofirm']);
+$checkbox = mysqli_real_escape_string($conn, $_POST['checkbox']);
+$status = 'pending';
 
-// //Verificando se email já é existente
-// $email_exist = getEmail($email, $env);
+//Verificando se email já é existente
+$email_exist = getEmail($email, $env);
 
-// var_dump($email);
-// echo '<br>';
-// var_dump($email_exist);
-// die;
-    
-// if ($email_exist) {
-//     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
-//     header('location: user_register.php');
-// }
-
-// if ($password !== $password_confirm) {
-//     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Senhas não conferem! </div>";
+if ($email_exist) {
+    $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
     header('location: user_register.php');
-// }
+}
 
-// if ($checkbox === 'on') {
+if ($password !== $password_confirm) {
+    $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Senhas não conferem! </div>";
+    header('location: user_register.php');
+}
 
-//     $email = strtolower($email);
+if ($checkbox === 'on') {
 
-//     //Criptografando senha
-//     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+    $email = strtolower($email);
 
-//     $sql = "INSERT INTO users (email, phone, password, status) VALUES (?, ?, ?, ?)";
+    //Criptografando senha
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-//     $stmt = $conn->prepare($sql);
-//     $stmt->bind_param('ssss', $email, $phone, $passwordHash, $status);
+    $sql = "INSERT INTO users (email, phone, password, status) VALUES (?, ?, ?, ?)";
 
-//     if ($stmt->execute()) {
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('ssss', $email, $phone, $passwordHash, $status);
 
-//         $userID = getIdUser($email, $env);
-//         $_SESSION['userID'] = $userID;
+    if ($stmt->execute()) {
 
-//         $_SESSION['register_msg'] =  "<div class='alert alert-success m-1' role='alert'>Registro cadastrado com sucesso. <a href='login.php' class='alert-link'>Acesse Login!</a> </div>";
-//         header('location: user_register.php');
-//     } else {
+        $userID = getIdUser($email, $env);
+        $_SESSION['userID'] = $userID;
 
-//         $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Entre em contato com suporte </div>";
-//         header('location: user_register.php');
-//     }
-// } else {
+        $_SESSION['register_msg'] =  "<div class='alert alert-success m-1' role='alert'>Registro cadastrado com sucesso. <a href='login.php' class='alert-link'>Acesse Login!</a> </div>";
+        header('location: user_register.php');
+    } else {
 
-//     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Senhas não conferem ou e-mail já cadastrado </div>";
-//     header('location: user_register.php');
-// }
+        $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Entre em contato com suporte </div>";
+        header('location: user_register.php');
+    }
+} else {
 
-// $conn->close();
+    $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Senhas não conferem ou e-mail já cadastrado </div>";
+    header('location: user_register.php');
+}
+
+$conn->close();
