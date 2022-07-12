@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once(dirname(__FILE__) . '/src/functions/functions.php');
+require_once(dirname(__FILE__) . '/functions.php');
 require_once(dirname(__FILE__) . '/connection.php');
 require_once(dirname(__FILE__) . '/dao_user_register.php');
 
