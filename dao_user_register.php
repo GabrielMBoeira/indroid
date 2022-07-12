@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+require_once(dirname(__FILE__) . '/src/functions/functions.php');
 require_once(dirname(__FILE__) . '/connection.php');
 require_once(dirname(__FILE__) . '/dao_user_register.php');
 
@@ -14,7 +15,10 @@ $checkbox = mysqli_real_escape_string($conn, $_POST['checkbox']);
 $status = 'pending';
 
 //Verificando se email já é existente
-$email_exist = getEmail($email, $env);
+$email_exist = getEmail($email, $conn);
+
+var_dump($email_exist);
+die;
 
 if ($email_exist) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
