@@ -3,10 +3,7 @@ session_start();
 
 
 require_once(dirname(__FILE__) . '/connection.php');
-// require_once(dirname(__FILE__) . '/../functions/functions.php');
-
-var_dump($_POST);
-die;
+require_once(dirname(__FILE__) . '/../functions/functions.php');
 
 $conn = Connection::newConnection();
 
@@ -20,6 +17,9 @@ $status = 'pending';
 
 //Verificando se email já é existente
 $email_exist = getEmail($email);
+
+var_dump($email_exist);
+die;
 
 if ($email_exist) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
