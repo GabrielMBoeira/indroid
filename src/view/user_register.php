@@ -97,7 +97,7 @@ require_once('template/header_home.php');
     function validform() {
         let frm = document.getElementById("frm");
         frm.method = "post"
-        frm.action = "src/db/dao_user_register.php"
+        frm.action = "dao_user_register.php"
         frm.submit()
     }
 
