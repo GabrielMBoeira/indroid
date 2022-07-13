@@ -1,10 +1,34 @@
 <?php
 session_start();
 
+class Connection
+{   
+    public static function newConnection()
+    {
+        $envPath = realpath(dirname(__FILE__) . '/../../env.ini');
+        $env = parse_ini_file($envPath);
+
+        $banco = $env['DATABASE'];
+        $servidor = $env['DATA_BASE_SERVER'];
+        $usuario = $env['DATA_BASE_USER'];
+        $senha = $env['DATA_BASE_PASSWORD'];
+
+        $conn = new mysqli($servidor, $usuario, $senha, $banco);
+
+        if ($conn->connect_error) {
+            die('Erro: ' . $conn->connect_error);
+        }
+
+        return $conn;
+    }
+}
 // require_once(dirname(__FILE__) . '/connection.php');
 // require_once(dirname(__FILE__) . '/../functions/functions.php');
 
-// $conn = Connection::newConnection();
+$conn = Connection::newConnection();
+
+var_dump($_POST);
+die;
 
 // $email = mysqli_real_escape_string($conn, $_POST['email']);
 // $phone = mysqli_real_escape_string($conn, $_POST['phone']);
@@ -16,7 +40,7 @@ session_start();
 //Verificando se email já é existente
 // $email_exist = getEmail($email);
 
-if (true) {
+if ($email_exist) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
     header('location: ../../user_register');
 }
