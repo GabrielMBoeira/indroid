@@ -4,11 +4,10 @@ session_start();
 if($_SERVER['HTTP_HOST'] == 'localhost') {
     $_SERVER['HTTP_ORIGIN'] = 'src/db/dao_user_register.php';
 } else {
-    $_SERVER['HTTP_ORIGIN'] += '/src/db/dao_user_register.php';
+    $_SERVER['HTTP_ORIGIN'] = $_SERVER['HTTP_ORIGIN'] . '/src/db/dao_user_register.php';
 }
 
 var_dump($_SERVER['HTTP_ORIGIN']);
-
 
 require_once('template/header_home.php');
 ?>
