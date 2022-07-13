@@ -21,7 +21,7 @@ require_once('template/header_home.php');
             </p>
             <div class="d-flex justify-content-center align-items-center">
                 <!-- INICIO DO BOTAO PAGSEGURO -->
-                <a href="https://mpago.la/2uRNAhL" target="_blank" title="Pagar com mercado pago">
+                <a href="https://mpago.la/2bzTRGg" target="_blank" title="Pagar com mercado pago">
                     <img src="src/assets/images/mercado-pago.png" alt="Pague com mercado pago - é rápido, grátis e seguro!" />
                 </a>
                 <!-- FIM DO BOTAO PAGSEGURO -->
