@@ -1,16 +1,15 @@
 <?php
-
 class Connection
 {   
     public static function newConnection()
     {
-        $envPath = realpath(dirname(__FILE__) . '/../../env.ini');
-        $env = parse_ini_file($envPath);
+        // $envPath = realpath(dirname(__FILE__) . '/../../env.ini');
+        // $env = parse_ini_file($envPath);
 
-        $banco = $env['DATABASE'];
-        $servidor = $env['DATA_BASE_SERVER'];
-        $usuario = $env['DATA_BASE_USER'];
-        $senha = $env['DATA_BASE_PASSWORD'];
+        $banco = 'heroku_b1051811368e69b';
+        $servidor = 'us-cdbr-east-06.cleardb.net';
+        $usuario = 'b8f8fc3ebcea22';
+        $senha = '57275722';
 
         $conn = new mysqli($servidor, $usuario, $senha, $banco);
 
@@ -21,4 +20,3 @@ class Connection
         return $conn;
     }
 }
-
