@@ -1,22 +1,22 @@
 <?php
 session_start();
 
-require_once(dirname(__FILE__) . '/connection.php');
-require_once(dirname(__FILE__) . '/../functions/functions.php');
+// require_once(dirname(__FILE__) . '/connection.php');
+// require_once(dirname(__FILE__) . '/../functions/functions.php');
 
-$conn = Connection::newConnection();
+// $conn = Connection::newConnection();
 
-$email = mysqli_real_escape_string($conn, $_POST['email']);
-$phone = mysqli_real_escape_string($conn, $_POST['phone']);
-$password = mysqli_real_escape_string($conn, $_POST['password']);
-$password_confirm = mysqli_real_escape_string($conn, $_POST['password_cofirm']);
-$checkbox = mysqli_real_escape_string($conn, $_POST['checkbox']);
-$status = 'pending';
+// $email = mysqli_real_escape_string($conn, $_POST['email']);
+// $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+// $password = mysqli_real_escape_string($conn, $_POST['password']);
+// $password_confirm = mysqli_real_escape_string($conn, $_POST['password_cofirm']);
+// $checkbox = mysqli_real_escape_string($conn, $_POST['checkbox']);
+// $status = 'pending';
 
 //Verificando se email já é existente
-$email_exist = getEmail($email, $conn);
+// $email_exist = getEmail($email);
 
-if ($email_exist) {
+if (true) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
     header('location: ../../user_register');
 }
