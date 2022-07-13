@@ -6,7 +6,7 @@ require_once('connection.php');
 
 $conn = Connection::newConnection();
 
-var_dump($_POST);
+var_dump($conn);
 die;
 
 $email = mysqli_real_escape_string($conn, $_POST['email']);
