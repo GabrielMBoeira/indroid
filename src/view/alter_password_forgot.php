@@ -4,7 +4,7 @@ require_once('./src/db/connection.php');
 require_once('./src/functions/functions.php');
 require_once('template/header_home.php');
 
-$conn = newConnection();
+$conn = Connection::newConnection();
 
 if (isset($_GET['user']) && isset($_GET['key'])) {
 

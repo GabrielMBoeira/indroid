@@ -5,7 +5,7 @@ session_start();
 require_once('connection.php');
 require_once('../functions/functions.php');
 
-$conn = newConnection();
+$conn = Connection::newConnection();
 
 $userID = mysqli_real_escape_string($conn, $_POST['userID']);
 $password = mysqli_real_escape_string($conn, $_POST['password']);

@@ -3,7 +3,7 @@ session_start();
 require_once('template/header_admin.php');
 require_once('src/db/connection.php');
 
-$conn = newConnection();
+$conn = Connection::newConnection();
 
 $email = mysqli_real_escape_string($conn, trim($_POST['email']));
 $phone = mysqli_real_escape_string($conn, trim($_POST['phone']));

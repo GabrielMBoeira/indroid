@@ -5,7 +5,7 @@ require_once('../functions/functions.php');
 
 if (isset($_POST['login'])) {
 
-    $conn = newConnection();
+    $conn = Connection::newConnection();
 
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);

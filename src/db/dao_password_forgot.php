@@ -7,7 +7,7 @@ require_once(dirname(__FILE__) . '/../mail/send.php');
 
 if (isset($_POST['password_forgot'])) {
 
-    $conn = newConnection();
+    $conn = Connection::newConnection();
 
     $email = mysqli_real_escape_string($conn, trim($_POST['email']));
     $email = htmlspecialchars(trim($email));

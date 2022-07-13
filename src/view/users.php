@@ -51,7 +51,7 @@ require_once('src/db/connection.php');
                 <tbody>
                     <?php
 
-                    $conn = newConnection();
+                    $conn = Connection::newConnection();
 
                     $sql = "SELECT * FROM login WHERE status <> 'active'";
 

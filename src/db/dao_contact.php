@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-require_once('connection.php');
-require_once('../functions/functions.php');
+require_once(dirname(__FILE__) . '/connection.php');
+require_once(dirname(__FILE__) . '/../functions/functions.php');
 
-$conn = newConnection();
+$conn = Connection::newConnection();
 
 $email = mysqli_real_escape_string($conn, trim($_POST['email']));
 $message = mysqli_real_escape_string($conn, trim($_POST['message']));

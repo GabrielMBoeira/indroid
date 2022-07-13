@@ -19,7 +19,9 @@ $email_exist = getEmail($email);
 if ($email_exist) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
     header('location: ../../user_register');
+    die;
 }
+
 
 if ($password !== $password_confirm) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Senhas não conferem! </div>";
