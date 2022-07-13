@@ -1,10 +1,10 @@
 <?php
 
 class Connection
-{
+{   
     public static function newConnection()
     {
-        $envPath = realpath(dirname(__FILE__) . '/../env.ini');
+        $envPath = realpath(dirname(__FILE__) . '/../../env.ini');
         $env = parse_ini_file($envPath);
 
         $banco = $env['DATABASE'];
@@ -18,7 +18,7 @@ class Connection
             die('Erro: ' . $conn->connect_error);
         }
 
-        return $env;
+        return $conn;
     }
 }
 
