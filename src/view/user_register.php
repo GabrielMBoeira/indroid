@@ -2,12 +2,11 @@
 session_start();
 require_once('template/header_home.php');
 
-
-if($_SERVER['HTTP_HOST'] == 'localhost') {
-    $path = 'src/db/dao_user_register.php';
-} else {
-    $path = 'https://www.indroid.com.br/src/db/dao_user_register.php';
-}
+// if($_SERVER['HTTP_HOST'] == 'localhost') {
+//     $path = 'src/db/dao_user_register.php';
+// } else {
+//     $path = 'https://www.indroid.com.br/src/db/dao_user_register.php';
+// }
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />
@@ -17,7 +16,7 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
     <div class="div-content">
         <div class="container-fluid">
             <div class="row">
-                <form class="form" method="post" action="<?= $path; ?>" id="frm" name="frm">
+                <form class="form" method="post" action="src/db/dao_user_register.php" id="frm" name="frm">
                     <div class="header-form">
                         <label>
                             Cadastrar Usuário
