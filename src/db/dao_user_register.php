@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-
 require_once(dirname(__FILE__) . '/connection.php');
-require_once(dirname(__FILE__) . '/../functions/functions.php');
+// require_once(dirname(__FILE__) . '/../functions/functions.php');
 
 $conn = Connection::newConnection();
 
@@ -14,6 +13,9 @@ $password_confirm = mysqli_real_escape_string($conn, $_POST['password_cofirm']);
 $checkbox = mysqli_real_escape_string($conn, $_POST['checkbox']);
 $status = 'pending';
 
+
+var_dump($_POST);
+die;
 
 //Verificando se email já é existente
 $email_exist = getEmail($email, $conn);
