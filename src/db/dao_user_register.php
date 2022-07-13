@@ -1,11 +1,12 @@
 <?php
 session_start();
 
-var_dump($_POST);
-die;
 
 require_once(dirname(__FILE__) . '/connection.php');
 require_once(dirname(__FILE__) . '/../functions/functions.php');
+
+var_dump($_POST);
+die;
 
 $conn = Connection::newConnection();
 
