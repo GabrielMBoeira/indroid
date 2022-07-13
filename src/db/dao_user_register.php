@@ -13,8 +13,11 @@ $password_confirm = mysqli_real_escape_string($conn, $_POST['password_cofirm']);
 $checkbox = mysqli_real_escape_string($conn, $_POST['checkbox']);
 $status = 'pending';
 
+
+
 //Verificando se email já é existente
-$email_exist = getEmail($email);
+// $email_exist = getEmail($email);
+$email_exist = true;
 
 if ($email_exist) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
