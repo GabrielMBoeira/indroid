@@ -1,15 +1,13 @@
 <?php
 session_start();
+require_once('template/header_home.php');
+
 
 if($_SERVER['HTTP_HOST'] == 'localhost') {
-    $_SERVER['HTTP_ORIGIN'] = 'src/db/dao_user_register.php';
+    $path = 'src/db/dao_user_register.php';
 } else {
-    $_SERVER['HTTP_ORIGIN'] = $_SERVER['HTTP_ORIGIN'] . '/src/db/dao_user_register.php';
+    $path = 'https://www.indroid.com.br/src/db/dao_user_register.php';
 }
-
-var_dump($_SERVER['HTTP_ORIGIN']);
-
-require_once('template/header_home.php');
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />
@@ -19,7 +17,7 @@ require_once('template/header_home.php');
     <div class="div-content">
         <div class="container-fluid">
             <div class="row">
-                <form class="form" method="post" action="<?= $_SERVER['HTTP_ORIGIN']; ?>" id="frm" name="frm">
+                <form class="form" method="post" action="<?= $path; ?>" id="frm" name="frm">
                     <div class="header-form">
                         <label>
                             Cadastrar Usuário
