@@ -10,7 +10,7 @@ require_once('template/header_home.php');
     <div class="div-content">
         <div class="container-fluid">
             <div class="row">
-                <form class="form" action="dao_user_register" method="post">
+                <form class="form" method="post" id="frm" name="frm">
                     <div class="header-form">
                         <label>
                             Cadastrar Usuário
@@ -62,7 +62,7 @@ require_once('template/header_home.php');
                         </a>
                     </div>
                     <div class="div-button">
-                        <button type="submit" class="btn btn-primary btn-sm mt-2" name="user_register">
+                        <button type="submit" class="btn btn-primary btn-sm mt-2" name="user_register" onclick="validform()">
                             Cadastrar
                         </button>
                     </div>
@@ -94,13 +94,18 @@ require_once('template/header_home.php');
 </div>
 
 <script>
+    function validform() {
+        let frm = document.getElementById("frm");
+        frm.method = "post"
+        frm.action = "src/db/dao_user_register.php"
+        frm.submit()
+    }
+
     function showRule() {
         $('#answerModal').modal('show');
         $('#box-answer').html('<b>Pense em uma pergunta que irá¡ fazer para seu amigo... e em seguida digite a resposta! <br><br> O robô irá gerar uma frase aleatória para que você possa digitar a resposta sem que seu amigo perceba. <br><br> Após digitar a resposta aperte a tecla ponto "." para assumir o controle da pergunta, e a partir daí é só completar a frase e deixar seus amigos impressionados.<b>')
     }
-</script>
 
-<script>
     $("#phone").mask("(99) 99999.9999");
 </script>
 
