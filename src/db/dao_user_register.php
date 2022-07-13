@@ -21,23 +21,20 @@ function newConnection()
 
 $conn = newConnection();
 
-var_dump($_POST);
-die;
+$email = mysqli_real_escape_string($conn, $_POST['email']);
+$phone = mysqli_real_escape_string($conn, $_POST['phone']);
+$password = mysqli_real_escape_string($conn, $_POST['password']);
+$password_confirm = mysqli_real_escape_string($conn, $_POST['password_cofirm']);
+$checkbox = mysqli_real_escape_string($conn, $_POST['checkbox']);
+$status = 'pending';
 
-// $email = mysqli_real_escape_string($conn, $_POST['email']);
-// $phone = mysqli_real_escape_string($conn, $_POST['phone']);
-// $password = mysqli_real_escape_string($conn, $_POST['password']);
-// $password_confirm = mysqli_real_escape_string($conn, $_POST['password_cofirm']);
-// $checkbox = mysqli_real_escape_string($conn, $_POST['checkbox']);
-// $status = 'pending';
-
-//Verificando se email já é existente
+// // Verificando se email já é existente
 // $email_exist = getEmail($email);
 
-if ($email_exist) {
-    $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
-    header('location: ../../user_register');
-}
+// if ($email_exist) {
+//     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
+//     header('location: ../../user_register');
+// }
 
 if ($password !== $password_confirm) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Senhas não conferem! </div>";
