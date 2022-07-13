@@ -1,10 +1,8 @@
 <?php
 
 //RETORNANDO EMAIL DO USUARIO DA BASE DE DADOS
-function getEmail($email)
+function getEmail($email, $conn)
 {
-
-    $conn = Connection::newConnection();
 
     $sql = "SELECT email FROM users WHERE email = ?";
 

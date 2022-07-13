@@ -16,7 +16,7 @@ $status = 'pending';
 
 
 //Verificando se email já é existente
-$email_exist = getEmail($email);
+$email_exist = getEmail($email, $conn);
 
 var_dump($email_exist);
 die;
