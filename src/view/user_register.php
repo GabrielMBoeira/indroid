@@ -1,12 +1,6 @@
 <?php
 session_start();
 require_once('template/header_home.php');
-
-// if($_SERVER['HTTP_HOST'] == 'localhost') {
-//     $path = 'src/db/dao_user_register.php';
-// } else {
-//     $path = 'https://www.indroid.com.br/src/db/dao_user_register.php';
-// }
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />
