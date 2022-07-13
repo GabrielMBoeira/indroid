@@ -4,6 +4,9 @@ session_start();
 require_once(dirname(__FILE__) . '/connection.php');
 // require_once(dirname(__FILE__) . '/../functions/functions.php');
 
+var_dump($_POST);
+die;
+
 $conn = Connection::newConnection();
 
 $email = mysqli_real_escape_string($conn, $_POST['email']);
@@ -13,15 +16,8 @@ $password_confirm = mysqli_real_escape_string($conn, $_POST['password_cofirm']);
 $checkbox = mysqli_real_escape_string($conn, $_POST['checkbox']);
 $status = 'pending';
 
-
-var_dump($_POST);
-die;
-
 //Verificando se email já é existente
 $email_exist = getEmail($email, $conn);
-
-var_dump($email_exist);
-die;
 
 if ($email_exist) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
