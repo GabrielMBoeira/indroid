@@ -66,11 +66,11 @@ $("#btn-question").click(function () {
     ////Verificação sobre limite questions caso não esteja ativo
     qtd++
 
-    if (qtd >= 2) {
+    if (qtd >= 7) {
         let status = document.getElementById('status').value;
 
         if (status != 'active') {
-            window.location.href = "https://localhost/indroid";
+            window.location.href = "https://www.indroid.com.br";
         }
     } 
 
