@@ -4,9 +4,7 @@ session_start();
 require_once('connection.php');
 // require_once(dirname(__FILE__) . '/../functions/functions.php');
 
-$conn = 'aqui';
-var_dump($conn);
-die;
+var_dump(Connection::newConnection());
 
 // $conn = Connection::newConnection();
 
