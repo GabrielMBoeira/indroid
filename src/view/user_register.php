@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('header_home.php');
+require_once('template/header_home.php');
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />
@@ -10,7 +10,7 @@ require_once('header_home.php');
     <div class="div-content">
         <div class="container-fluid">
             <div class="row">
-                <form class="form" action="dao_user_register.php" method="post">
+                <form class="form" action="dao_user_register" method="post">
                     <div class="header-form">
                         <label>
                             Cadastrar Usuário
@@ -57,7 +57,7 @@ require_once('header_home.php');
                                 <strong class="game" onclick="showRule()">Como jogar</strong>
                             </a>
                         </div>
-                        <a href="responsability.php" class="mt-1 text-white" name="responsability">
+                        <a href="responsability" class="mt-1 text-white" name="responsability">
                             <strong class="access_term_responsability">Acessar Termo de responsabilidade</strong>
                         </a>
                     </div>
@@ -105,5 +105,5 @@ require_once('header_home.php');
 </script>
 
 <?php
-require_once('footer_home.php');
+require_once('template/footer_home.php');
 ?>

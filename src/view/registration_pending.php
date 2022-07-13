@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('header_home.php');
+require_once('template/header_home.php');
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />
@@ -51,5 +51,5 @@ require_once('header_home.php');
 </script>
 
 <?php
-require_once('footer_home.php');
+require_once('template/footer_home.php');
 ?>

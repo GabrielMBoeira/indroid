@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('header_home.php');
+require_once('template/header_home.php');
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />
@@ -31,7 +31,7 @@ require_once('header_home.php');
                         Ciente disto confirmo abaixo.
                     </p>
 
-                    <a href="user_register.php" class="btn btn-success btn-sm">Estou ciente</a>
+                    <a href="user_register" class="btn btn-success btn-sm">Estou ciente</a>
 
                 </form>
             </div>
@@ -44,5 +44,5 @@ require_once('header_home.php');
 </script>
 
 <?php
-require_once('footer_home.php');
+require_once('template/footer_home.php');
 ?>

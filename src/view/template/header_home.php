@@ -21,7 +21,7 @@
 
    <header class="header">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-         <a class="navbar-brand" href="index.php">
+         <a class="navbar-brand" href="home">
             <strong> inDROID </strong>
          </a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#content-nav" aria-controls="content-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,15 +29,18 @@
          </button>
 
          <div class="collapse navbar-collapse" id="content-nav">
-            <ul class="navbar-nav  w-100">
+            <ul class="navbar-nav d-flex justify-content-end w-100">
                <li class="nav-item active  mr-2">
-                  <a class="nav-link" href="users.php">Lista de usuarios</a>
+                  <a class="nav-link" href="home">Home</a>
+               </li>
+               <li class="nav-item active  mr-2">
+                  <a class="nav-link" href="user_register">Cadastrar usuário</a>
                </li>
                <li class="nav-item active mr-2">
-                  <a class="nav-link" href="messages.php">Mensagens</a>
+                  <a class="nav-link" href="contact">Contato</a>
                </li>
-               <li class="nav-item active mr-2">
-                  <a class="nav-link" href="logout.php">Sair</a>
+               <li class="nav-item active mr-4">
+                  <a class="nav-link" href="login"><strong>Login</strong></a>
                </li>
             </ul>
          </div>

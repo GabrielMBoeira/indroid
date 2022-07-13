@@ -1,25 +1,32 @@
 <?php
 session_start();
-require_once('./src/db/connection.php');
-require_once('./src/functions/functions.php');
-require_once('header_home.php');
+require_once('template/header.php');
+require_once(dirname(__FILE__, 2) . '/db/connection.php');
+require_once(dirname(__FILE__, 2) . '/functions/functions.php');
 
-$conn = newConnection($env);
+// VALIDANDO SESSÃO
+if (isset($_SESSION['userID'])) {
 
-if (isset($_GET['user']) && isset($_GET['key'])) {
+    $conn = newConnection();
+    $idUser = mysqli_real_escape_string($conn, $_SESSION['userID']);
+    $idUser = htmlspecialchars($idUser);
 
-    $user = mysqli_real_escape_string($conn, htmlspecialchars($_GET['user']));
-    $key = mysqli_real_escape_string($conn, htmlspecialchars($_GET['key']));
+    if (getUser($idUser)) {
+        $user = getUser($idUser);
 
-    $user = htmlspecialchars($user);
-    $key = htmlspecialchars($key);
+        $user_email = $user['email'];
+        $user_status = $user['status'];
 
-    !existEmail($user, $env) ? header('location: login.php') : '';
+        if ($user_status !== 'active') {
+            header('location: registration_pending');
+        }
 
-    if (checkKey($user, $key, $env)) {
-
-        $userID = getIdUser($user, $env);
+    } else {
+        header('location: registration_pending');
     }
+    
+} else {
+    header('location: login');
 }
 
 ?>
@@ -31,17 +38,17 @@ if (isset($_GET['user']) && isset($_GET['key'])) {
     <div class="div-content">
         <div class="container-fluid">
             <div class="row">
-                <form class="form" action="src/db/dao_alter_password_forgot.php" method="post">
-                    <input type="hidden" name="userID" value="<?= $userID ?>">
+                <form class="form" action="src/db/dao_alter_password.php" method="post"> 
+                    <input type="hidden" name="userID" value="<?= $idUser ?>">
                     <div class="header-form">
                         <label>
                             Alterar Senha
                         </label>
                     </div>
                     <?php
-                    if (isset($_SESSION['alter_password-forgot-msg'])) {
-                        print_r($_SESSION['alter_password-forgot-msg']);
-                        unset($_SESSION['alter_password-forgot-msg']);
+                    if (isset($_SESSION['alter_password-msg'])) {
+                        print_r($_SESSION['alter_password-msg']);
+                        unset($_SESSION['alter_password-msg']);
                     }
                     ?>
                     <div class="form-group">
@@ -57,7 +64,7 @@ if (isset($_GET['user']) && isset($_GET['key'])) {
                         <input type="password" class="form-control" id="password_cofirm" name="password_cofirm" required />
                     </div>
                     <div class="div-button">
-                        <button type="submit" class="btn btn-primary mt-2" name="user_register">
+                        <button type="submit" class="btn btn-primary btn-sm mt-2" name="user_register">
                             Salvar
                         </button>
                     </div>
@@ -69,5 +76,5 @@ if (isset($_GET['user']) && isset($_GET['key'])) {
 </main>
 
 <?php
-require_once('footer_home.php');
+require_once('template/footer_home.php');
 ?>

@@ -1,18 +1,18 @@
 <?php
 session_start();
-require_once('header.php');
-require_once('src/db/connection.php');
-require_once('src/functions/functions.php');
+require_once('template/header.php');
+require_once(dirname(__FILE__, 2) . '/db/connection.php');
+require_once(dirname(__FILE__, 2) . '/functions/functions.php');
 
 // VALIDANDO SESSÃO
 if (isset($_SESSION['userID'])) {
 
-    $conn = newConnection($env);
+    $conn = newConnection();
     $idUser = mysqli_real_escape_string($conn, $_SESSION['userID']);
     $idUser = htmlspecialchars($idUser);
 
-    if (getUser($idUser, "", $env)) {
-        $user = getUser($idUser, "", $env);
+    if (getUser($idUser)) {
+        $user = getUser($idUser);
 
         $user_id         = $user['id'];
         $user_email      = $user['email'];
@@ -20,17 +20,17 @@ if (isset($_SESSION['userID'])) {
         $user_qtd_access = $user['qtd_access'];
 
         if ($user_qtd_access >= 1 && $user_status !== 'active') {
-            header('location: registration_pending.php');
+            header('location: registration_pending');
         }
 
         //Acrescentando quantidade de acessos users
-        setQtdAccessUser($user_id, $user_qtd_access, $env);
+        setQtdAccessUser($user_id, $user_qtd_access);
     } else {
-        header('location: registration_pending.php');
+        header('location: registration_pending');
     }
 
 } else {
-    header('location: login.php');
+    header('location: login');
 }
 ?>
 
@@ -91,5 +91,5 @@ if (isset($_SESSION['userID'])) {
 <script src="src/js/question.js"></script>
 
 <?php
-require_once('footer.php');
+require_once('template/footer.php');
 ?>

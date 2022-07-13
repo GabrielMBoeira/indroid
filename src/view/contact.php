@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('header_home.php');
+require_once('template/header_home.php');
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />
@@ -31,7 +31,7 @@ require_once('header_home.php');
                             <br>
                             Santa Catarina / Brasil
                             <br>
-                            E-mail: indroidbot@gmail.com
+                            E-mail: bot@indroid.com.br
                         </i>
                     </div>
                 </div>
@@ -71,5 +71,5 @@ require_once('header_home.php');
 </main>
 
 <?php
-require_once('footer_home.php');
+require_once('template/footer_home.php');
 ?>
