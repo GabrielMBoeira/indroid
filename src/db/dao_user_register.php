@@ -4,10 +4,10 @@ session_start();
 require_once(dirname(__FILE__) . '/connection.php');
 // require_once(dirname(__FILE__) . '/../functions/functions.php');
 
+$conn = Connection::newConnection();
+
 var_dump($_POST);
 die;
-
-$conn = Connection::newConnection();
 
 $email = mysqli_real_escape_string($conn, $_POST['email']);
 $phone = mysqli_real_escape_string($conn, $_POST['phone']);
