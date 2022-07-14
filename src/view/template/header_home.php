@@ -14,7 +14,34 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+   <!-- Meta Pixel Code -->
+   <script>
+      ! function(f, b, e, v, n, t, s) {
+         if (f.fbq) return;
+         n = f.fbq = function() {
+            n.callMethod ?
+               n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+         };
+         if (!f._fbq) f._fbq = n;
+         n.push = n;
+         n.loaded = !0;
+         n.version = '2.0';
+         n.queue = [];
+         t = b.createElement(e);
+         t.async = !0;
+         t.src = v;
+         s = b.getElementsByTagName(e)[0];
+         s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+         'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '3208180679437901');
+      fbq('track', 'PageView');
+   </script>
+   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3208180679437901&ev=PageView&noscript=1" /></noscript>
+   <!-- End Meta Pixel Code -->
+
    <title>InDroid</title>
+
 </head>
 
 <body class="body">
