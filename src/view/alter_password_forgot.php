@@ -4,6 +4,9 @@ require_once('./src/db/connection.php');
 require_once('./src/functions/functions.php');
 require_once('template/header_home.php');
 
+$_GET['user'] ? $_GET['user'] : header('location: home');
+$_GET['key'] ? $_GET['key'] : header('location: home');
+
 $conn = Connection::newConnection();
 
 if (isset($_GET['user']) && isset($_GET['key'])) {
