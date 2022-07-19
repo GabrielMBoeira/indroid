@@ -22,10 +22,10 @@ if ($email_exist) {
     die;
 }
 
-
-if ($password !== $password_confirm) {
+if ($password != $password_confirm) {
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Senhas não conferem! </div>";
     header('location: ../../user_register');
+    die;
 }
 
 if ($checkbox === 'on') {
