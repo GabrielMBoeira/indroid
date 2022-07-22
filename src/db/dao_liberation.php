@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-
 require_once('connection.php');
 require_once('../functions/functions.php');
 
@@ -13,7 +12,7 @@ $status = 'active';
 $email = getEmailById($userID);
 $emailString =  implode('"', $email);  
 
-$sql = "UPDATE login SET status = ? WHERE id_user = ? ";
+$sql = "UPDATE users SET status = ? WHERE id = ? ";
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('si', $status, $userID);

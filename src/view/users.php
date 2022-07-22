@@ -3,6 +3,8 @@ session_start();
 require_once('template/header_admin.php');
 require_once('src/db/connection.php');
 
+//Check sessão
+if (!isset($_SESSION['adm_prog'])) { header('location: login'); die; } 
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />
@@ -53,7 +55,7 @@ require_once('src/db/connection.php');
 
                     $conn = Connection::newConnection();
 
-                    $sql = "SELECT * FROM login WHERE status <> 'active'";
+                    $sql = "SELECT * FROM users WHERE status <> 'active'";
 
                     $stmt = $conn->prepare($sql);
                     $stmt->execute();
@@ -64,12 +66,12 @@ require_once('src/db/connection.php');
 
                     ?>
                             <tr>
-                                <td style="vertical-align: middle;" class="text-truncate"> <?= $row['id_user'] ?> </td>
+                                <td style="vertical-align: middle;" class="text-truncate"> <?= $row['id'] ?> </td>
                                 <td style="vertical-align: middle;" class="text-truncate"> <?= $row['email'] ?> </td>
                                 <td style="vertical-align: middle;" class="text-truncate"> <?= $row['phone'] ?> </td>
                                 <td style="vertical-align: middle;" class="text-truncate"> <?= $row['status'] ?> </td>
                                 <td style="vertical-align: middle;" class="text-truncate">
-                                    <a href="../../src/db/dao_liberation.php?id= <?= $row['id_user'] ?>" class="btn btn-success" class="text-truncate">
+                                    <a href="src/db/dao_liberation.php?id= <?= $row['id'] ?>" class="btn btn-success" class="text-truncate">
                                         Liberar e enviar email
                                     </a>
                                 </td>

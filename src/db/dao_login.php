@@ -13,8 +13,15 @@ if (isset($_POST['login'])) {
     $email = mysqli_real_escape_string($conn, $email);
     $password = mysqli_real_escape_string($conn, $password);
 
+
     //Validação de Password e Senha 
     $checkPass = checkPassword($email, $password);
+
+    if ($checkPass && $email == 'gabrielmboeira@gmail.com') {
+        $_SESSION['adm_prog'] = 'adm_check';
+        header('location: ../../users');
+        die;
+    }
 
     //Validação se usuário está ativo
     $userIsActive = userIsActive($email);

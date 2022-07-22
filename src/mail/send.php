@@ -108,8 +108,11 @@ try {
     $mail->Subject = 'Recuperação de senha - Indroid';
     $mail->Body    = "
     
-    Testando HTML <br>
-    <b>Recupera senha!</b>
+    Olá! 
+    <br>
+    <br>
+    <b>Você solicitou a recuperação de senha para o aplicativo inDroid!</b>
+    <p>Observação: Para efetuar a recuperação de senha clique no link abaixo.</p>
     <br>
     <br>
     <a href='https://www.indroid.com.br/alter_password_forgot?user=".$email."&key=".$hash."'>Clique aqui para recuperar senha!</a>

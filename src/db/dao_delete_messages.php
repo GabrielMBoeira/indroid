@@ -13,7 +13,7 @@ $idMessage =  intval($idMessage);
 
 var_dump($idMessage);
 
-$sql = " DELETE FROM messages WHERE id = ? ";
+$sql = " UPDATE messages SET status = 'check' WHERE id = ? ";
 
 $stmt = $conn->prepare($sql);
 $stmt ->bind_param('i', $idMessage);

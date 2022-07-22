@@ -10,7 +10,7 @@ $phone = mysqli_real_escape_string($conn, trim($_POST['phone']));
 
 if ($email === '' || $phone === '') {
 
-    $data['id_user'] = 'Vazio';
+    $data['id'] = 'Vazio';
     $data['email'] = 'Vazio';
     $data['phone'] = 'Vazio';
     $data['status'] = 'Vazio';
@@ -18,7 +18,7 @@ if ($email === '' || $phone === '') {
 
 if (isset($email)) {
 
-    $sql = "SELECT * FROM login WHERE email = ?";
+    $sql = "SELECT * FROM users WHERE email = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
@@ -32,7 +32,7 @@ if (isset($email)) {
 
 if (isset($phone)) {
 
-    $sql = "SELECT * FROM login WHERE phone = ?";
+    $sql = "SELECT * FROM users WHERE phone = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $phone);
@@ -89,12 +89,12 @@ $conn->close();
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="vertical-align: middle;" class="text-truncate"> <?= $data['id_user'] ?> </td>
+                        <td style="vertical-align: middle;" class="text-truncate"> <?= $data['id'] ?> </td>
                         <td style="vertical-align: middle;" class="text-truncate"> <?= $data['email'] ?> </td>
                         <td style="vertical-align: middle;" class="text-truncate"> <?= $data['phone'] ?> </td>
                         <td style="vertical-align: middle;" class="text-truncate"> <?= $data['status'] ?> </td>
                         <td style="vertical-align: middle;" class="text-truncate">
-                            <a href="../../src/db/dao_liberation.php?id= <?= $data['id_user'] ?>" class="btn btn-success" class="text-truncate">
+                            <a href="../../src/db/dao_liberation.php?id= <?= $data['id'] ?>" class="btn btn-success" class="text-truncate">
                                 Liberar
                             </a>
                         </td>
