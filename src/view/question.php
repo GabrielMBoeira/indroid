@@ -5,33 +5,33 @@ require_once(dirname(__FILE__, 2) . '/db/connection.php');
 require_once(dirname(__FILE__, 2) . '/functions/functions.php');
 
 // VALIDANDO SESSÃO
-if (isset($_SESSION['userID'])) {
+// if (isset($_SESSION['userID'])) {
 
-    $conn = Connection::newConnection();
-    $idUser = mysqli_real_escape_string($conn, $_SESSION['userID']);
-    $idUser = htmlspecialchars($idUser);
+//     $conn = Connection::newConnection();
+//     $idUser = mysqli_real_escape_string($conn, $_SESSION['userID']);
+//     $idUser = htmlspecialchars($idUser);
 
-    if (getUser($idUser)) {
-        $user = getUser($idUser);
+//     if (getUser($idUser)) {
+//         $user = getUser($idUser);
 
-        $user_id         = $user['id'];
-        $user_email      = $user['email'];
-        $user_status     = $user['status'];
-        $user_qtd_access = $user['qtd_access'];
+//         $user_id         = $user['id'];
+//         $user_email      = $user['email'];
+//         $user_status     = $user['status'];
+//         $user_qtd_access = $user['qtd_access'];
 
-        if ($user_qtd_access >= 1 && $user_status !== 'active') {
-            header('location: registration_pending');
-        }
+//         if ($user_qtd_access >= 1 && $user_status !== 'active') {
+//             header('location: registration_pending');
+//         }
 
-        //Acrescentando quantidade de acessos users
-        setQtdAccessUser($user_id, $user_qtd_access);
-    } else {
-        header('location: registration_pending');
-    }
+//         //Acrescentando quantidade de acessos users
+//         setQtdAccessUser($user_id, $user_qtd_access);
+//     } else {
+//         header('location: registration_pending');
+//     }
 
-} else {
-    header('location: login');
-}
+// } else {
+//     header('location: login');
+// }
 ?>
 
 <link rel="stylesheet" href="src/assets/css/template.css" />

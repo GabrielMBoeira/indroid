@@ -1,44 +1,49 @@
 <?php
-session_start();
-require_once('connection.php');
+// session_start();
+// require_once('connection.php');
 require_once('../functions/functions.php');
 
 if (isset($_POST['login'])) {
 
-    $conn = Connection::newConnection();
 
-    $email = htmlspecialchars($_POST['email']);
-    $password = htmlspecialchars($_POST['password']);
-
-    $email = mysqli_real_escape_string($conn, $email);
-    $password = mysqli_real_escape_string($conn, $password);
+    //WEB FREE
+    header('location: ../../question');
 
 
-    //Validação de Password e Senha 
-    $checkPass = checkPassword($email, $password);
+    // $conn = Connection::newConnection();
 
-    if ($checkPass && $email == 'gabrielmboeira@gmail.com') {
-        $_SESSION['adm_prog'] = 'adm_check';
-        header('location: ../../users');
-        die;
-    }
+    // $email = htmlspecialchars($_POST['email']);
+    // $password = htmlspecialchars($_POST['password']);
 
-    //Validação se usuário está ativo
-    $userIsActive = userIsActive($email);
+    // $email = mysqli_real_escape_string($conn, $email);
+    // $password = mysqli_real_escape_string($conn, $password);
 
 
-    if ($checkPass) {
+    // //Validação de Password e Senha 
+    // $checkPass = checkPassword($email, $password);
 
-        $userID = $checkPass['id'];
-        $_SESSION['userID'] = $userID;
-        header('location: ../../question');
+    // if ($checkPass && $email == 'gabrielmboeira@gmail.com') {
+    //     $_SESSION['adm_prog'] = 'adm_check';
+    //     header('location: ../../users');
+    //     die;
+    // }
 
-    } else {
+    // //Validação se usuário está ativo
+    // $userIsActive = userIsActive($email);
 
-        $_SESSION['login_msg'] =  "<div class='alert alert-msg-login alert-danger m-1' role='alert'> Email não cadastrado ou senha incorreta! </div>";
-        header('location: ../../login');
+
+    // if ($checkPass) {
+
+    //     $userID = $checkPass['id'];
+    //     $_SESSION['userID'] = $userID;
+    //     header('location: ../../question');
+
+    // } else {
+
+    //     $_SESSION['login_msg'] =  "<div class='alert alert-msg-login alert-danger m-1' role='alert'> Email não cadastrado ou senha incorreta! </div>";
+    //     header('location: ../../login');
         
-    }
+    // }
 
-    $conn->close();
+    // $conn->close();
 }
