@@ -67,7 +67,7 @@
                   <a class="nav-link" href="contact">Contato</a>
                </li>
                <li class="nav-item active mr-4">
-                  <a class="nav-link" href="../login"><strong>Login</strong></a>
+                  <a class="nav-link" href="login"><strong>Login</strong></a>
                </li>
             </ul>
          </div>
