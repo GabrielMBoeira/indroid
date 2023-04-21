@@ -39,10 +39,10 @@
             </div>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="question">Perguntar</a>
+            <a class="nav-link" href="question.php">Perguntar</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="logout">Sair</a>
+            <a class="nav-link" href="logout.php">Sair</a>
           </li>
         </ul>
       </div>
