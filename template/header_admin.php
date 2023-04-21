@@ -37,7 +37,7 @@
                   <a class="nav-link" href="messages">Mensagens</a>
                </li>
                <li class="nav-item active mr-2">
-                  <a class="nav-link" href="logout">Sair</a>
+                  <a class="nav-link" href="logout.php">Sair</a>
                </li>
             </ul>
          </div>
