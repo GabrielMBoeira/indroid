@@ -1,22 +1,21 @@
 <?php
-
-echo 'teste';
 // session_start();
-// require_once('template/header_home.php');
+require_once('template/header_home.php');
 ?>
-<!-- 
+
 <link rel="stylesheet" href="src/assets/css/login.css" />
 
 <main class="main">
    <div class="div-content">
       <div class="container-fluid">
          <div class="row row-form">
-            <form class="form" action="src/db/dao_login.php" method="post">
+            <!-- <form class="form" action="src/db/dao_login.php" method="post"> -->
+            <form class="form" action="question.php" method="post">
                <?php
-               // if (isset($_SESSION['login_msg'])) {
-               //    print_r($_SESSION['login_msg']);
-               //    unset($_SESSION['login_msg']);
-               // }
+               if (isset($_SESSION['login_msg'])) {
+                  print_r($_SESSION['login_msg']);
+                  unset($_SESSION['login_msg']);
+               }
                ?>
                <div class="form-group">
                   <label class="label" for="email">
@@ -43,8 +42,8 @@ echo 'teste';
       </div>
    </div>
    </div>
-</main> -->
+</main>
 
 <?php
-// require_once('template/footer_home.php');
+require_once('template/footer_home.php');
 ?>
