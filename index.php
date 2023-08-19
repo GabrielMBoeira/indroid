@@ -18,8 +18,6 @@ require_once('template/header_home.php');
 //    $stmt->execute() ? "" : "";
 // }
 
-phpinfo();
-
 ?>
 
 <link rel="stylesheet" href="src/assets/css/home.css" />
