@@ -31,7 +31,7 @@ require_once('template/header_home.php');
       </h1>
 
       <h6>
-         <i> Inteligência Artificiauuuu</i>
+         <i> Inteligência Artificial</i>
       </h6>
 
       <p style="display:none"><span class="text-slider-items">Surpreenda seus amigos,Divirta-se,Impressione,O Robô mais inteligente da web</span></p>
