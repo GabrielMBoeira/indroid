@@ -22,15 +22,19 @@ jobs:
       run: 
         composer install  # Instala as dependências do Composer
 
-    - name: Install sshpass
-      run: sudo apt-get install -y sshpass
-
-    - name: Run SSH command with password
+    - name: Set up SSH key and agent
       run: |
-        echo "$SSH_PASSWORD" | sshpass -p "$SSH_KEY_PASSWORD" ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no user@host "154.56.48.36"
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        eval $(ssh-agent -s)
+        ssh-add ~/.ssh/id_rsa
       env:
-        SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
-        SSH_KEY_PASSWORD: ${{ secrets.SSH_KEY_PASSWORD }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      
+    - name: Run SSH remote command
+      run: |
+        ssh u654002636@154.56.48.36 "ls -l /public_html/"
         
     - name: Deploy para meu hosting
       uses: easingthemes/ssh-deploy@main
