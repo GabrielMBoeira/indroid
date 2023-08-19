@@ -27,7 +27,7 @@ jobs:
 
     - name: Run SSH command with password
       run: |
-        echo "$SSH_PASSWORD" | sshpass -p "$SSH_KEY_PASSWORD" ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no user@host "comando_remoto"
+        echo "$SSH_PASSWORD" | sshpass -p "$SSH_KEY_PASSWORD" ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no user@host "154.56.48.36"
       env:
         SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
         SSH_KEY_PASSWORD: ${{ secrets.SSH_KEY_PASSWORD }}
