@@ -17,6 +17,9 @@ require_once('template/header_home.php');
 //    $stmt->bind_param('s',  $ipUser);
 //    $stmt->execute() ? "" : "";
 // }
+
+phpinfo();
+
 ?>
 
 <link rel="stylesheet" href="src/assets/css/home.css" />
