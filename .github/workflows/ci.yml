@@ -1,22 +1,27 @@
-name: indroid.com.br CI 
+name: PHP Build and Test
+
 on:
   push:
-    branches: 
-      - main
+    branches:
+      - main  # Ou substitua pela branch desejada
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout do repositorio
-        uses: actions/checkout@v1
-      - name: Deploy para meu hosting
-        uses: easingthemes/ssh-deploy@main
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          ARGS: "-rlgoDzvc -i"
-          SOURCE: "."
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'  # Substitua pela versão desejada
+        
+    - name: Install Composer dependencies
+      run: 
+        composer install  # Instala as dependências do Composer
+        
+    - name: Run PHP tests
+      run: 
+        phpunit  # Substitua pelo comando de teste do PHPUnit
