@@ -21,6 +21,16 @@ jobs:
     - name: Install Composer dependencies
       run: 
         composer install  # Instala as dependências do Composer
+
+    - name: Install sshpass
+      run: sudo apt-get install -y sshpass
+
+    - name: Run SSH command with password
+      run: |
+        echo "$SSH_PASSWORD" | sshpass -p "$SSH_KEY_PASSWORD" ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no user@host "comando_remoto"
+      env:
+        SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+        SSH_KEY_PASSWORD: ${{ secrets.SSH_KEY_PASSWORD }}
         
     - name: Deploy para meu hosting
       uses: easingthemes/ssh-deploy@main
