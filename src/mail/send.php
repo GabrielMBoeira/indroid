@@ -33,10 +33,6 @@ use PHPMailer\PHPMailer\Exception;
 
 
 
-
-
-
-
 // // include 'path/to/mailin-api/Mailin.php';
 // $mailin = new Mailin('indroidbot@gmail.com', 'bFCLRqthXxvzyOUP');
 // $mailin->
@@ -44,8 +40,8 @@ use PHPMailer\PHPMailer\Exception;
 // setFrom('indroidbot@gmail.com', 'Indroid Bot')->
 // setReplyTo('indroidbot@gmail.com','Indroid Bot')->
 // setSubject('Inserir o assunto aqui')->
-// setText('Olá')->
-// setHtml('<strong>Olá</strong>');
+// setText('OlÃ¡')->
+// setHtml('<strong>OlÃ¡</strong>');
 // $res = $mailin->send();
 
 // As mensagens de sucesso foram reenviadas sob esta forma:
@@ -59,7 +55,7 @@ use PHPMailer\PHPMailer\Exception;
 
 function sendForgotEmail($email, $hash) {
 
-$envPath = realpath(dirname(__FILE__, 3) . '/env.ini');
+$envPath = realpath(dirname(__FILE__, 3) . '/.env');
 $env = parse_ini_file($envPath);
 
 $username = $env['USERNAME'];
@@ -75,20 +71,17 @@ try {
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                //Enable verbose debug output
     $mail->isSMTP();                                      //Send using SMTP
-    $mail->Host       = 'smtp-relay.sendinblue.com';      //Set the SMTP server to send through
+    $mail->Host       = 'smtp.hostinger.com';             //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                             //Enable SMTP authentication
     $mail->Username   = $username;                        //SMTP username
     $mail->Password   = $password;                        //SMTP password
     $mail->SMTPSecure =  PHPMailer::ENCRYPTION_STARTTLS;  //Enable implicit TLS encryption
-    // $mail->Port       = 25;                            //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-    $mail->Port       = 587;                              //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-    // $mail->Port       = 465;                           //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
+    $mail->Port       = 465;                              //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     $name_from = 'Indroid';
-    $email_from = 'no-reply@indroid.com.br';
-    $email_to = $email;
+    $email_from = 'suporte@indroid.com.br';
     // $email_to = $email;
+    $email_to = 'gabrielmboeira@gmail.com';
 
     //Recipients
     $mail->setFrom($email_from , $name_from);
@@ -105,14 +98,15 @@ try {
     //Content
     $mail->isHTML(true);   //Set email format to HTML
     // $mail->WordWrap = 50;  
-    $mail->Subject = 'Recuperação de senha - Indroid';
+
+    $mail->Subject = 'RecuperaÃ§Ã£o de senha - Indroid';
     $mail->Body    = "
     
-    Olá! 
+    OlÃ¡! 
     <br>
     <br>
-    <b>Você solicitou a recuperação de senha para o aplicativo inDroid!</b>
-    <p>Observação: Para efetuar a recuperação de senha clique no link abaixo.</p>
+    <b>VocÃª solicitou a recuperaÃ§Ã£o de senha para o aplicativo inDroid!</b>
+    <p>ObservaÃ§Ã£o: Para efetuar a recuperaÃ§Ã£o de senha clique no link abaixo.</p>
     <br>
     <br>
     <a href='https://www.indroid.com.br/alter_password_forgot?user=".$email."&key=".$hash."'>Clique aqui para recuperar senha!</a>
@@ -121,10 +115,13 @@ try {
     ";
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
+    // var_dump("aqui");
+    // die;
+
     $mail->send();
     echo utf8_encode("Mensagem enviada com sucesso para $email_to!");
 } catch (Exception $e) {
-    echo utf8_encode("Mensagem nï¿½o pode ser enviada para $email_to!. Mailer Error: {$mail->ErrorInfo}");
+    echo utf8_encode("Mensagem nÃ£o pode ser enviada para $email_to!. Mailer Error: {$mail->ErrorInfo}");
 }
 
 }  
