@@ -4,7 +4,7 @@ class Connection
 {   
     public static function newConnection()
     {
-        $envPath = realpath(dirname(__FILE__) . '/../../env.ini');
+        $envPath = realpath(dirname(__FILE__) . '/../../.env');
         $env = parse_ini_file($envPath);
 
         $banco = $env['DATABASE'];
