@@ -31,7 +31,7 @@ require_once('template/header_home.php');
                             <br>
                             Santa Catarina / Brasil
                             <br>
-                            E-mail: contato@indroid.com.br
+                            E-mail: suporte@indroid.com.br
                         </i>
                     </div>
                 </div>

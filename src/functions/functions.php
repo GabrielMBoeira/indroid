@@ -119,12 +119,11 @@ function checkPassword($email, $password)
         $row = $result->fetch_assoc();
 
         if (password_verify($password, $row['password'])) {
-
             $data = $row;
         } else {
-
             $data = null;
         }
+
     } else {
         $data = null;
     }
@@ -193,7 +192,6 @@ function userIsActive($email)
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
     $stmt->execute();
-
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
