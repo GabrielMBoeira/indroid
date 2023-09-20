@@ -23,7 +23,6 @@ if ($email_exist) {
         $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> E-mail já foi cadastrado (liberação está pendente)! <a href='$ticketUrl' class='alert-link'>Liberar acesso!</a></div>";
         header('location: ../../user_register');
         die;
-
     }
 
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";

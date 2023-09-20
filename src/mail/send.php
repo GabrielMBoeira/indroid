@@ -53,9 +53,8 @@ function sendForgotEmail($email, $hash)
                             Olá! 
                             <br>
                             <br>
-                            <b>Vocêee solicitou a recuperação de senha para o aplicativo inDroid!</b>
+                            <b>Você solicitou a recuperação de senha para o aplicativo inDroid!</b>
                             <p>Observação: Para efetuar a recuperação de senha clique no link abaixo.</p>
-                            <br>
                             <br>
                             <a href='https://www.indroid.com.br/alter_password_forgot?user=" . $email . "&key=" . $hash . "'>Clique aqui para recuperar senha!</a>
                             ";

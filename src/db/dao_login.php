@@ -29,6 +29,13 @@ if (isset($_POST['login'])) {
 
     } else if ($checkPass && $statusUser['status'] == 'pending') {
 
+        //Se já gerou ticket mas está pendente
+        if ($ticketUrl = getTicketUrlbyEmail($email)) {
+            $_SESSION['login_msg'] =  "<div class='alert alert-danger m-1' role='alert'> E-mail já foi cadastrado! <a href='$ticketUrl' class='alert-link'>Liberar acesso!</a></div>";
+            header('location: ../../login');
+            die;
+        }
+
         $_SESSION['login_msg'] =  "<div class='alert alert-msg-login alert-danger m-1' role='alert'> Usuário cadastrado, aguardando liberação! </div>";
         header('location: ../../login');
 
