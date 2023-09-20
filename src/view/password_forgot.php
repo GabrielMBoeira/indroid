@@ -29,7 +29,7 @@ require_once('template/header_home.php');
                         <input type="email" class="form-control" name="email" autocomplete="off" required />
                     </div>
                     <div class="div-button">
-                        <button type="submit" class="btn btn-primary btn-sm mt-4" name="password_forgot">
+                        <button type="submit" class="btn btn-primary btn-sm mt-4" name="password_forgot" onclick="showLoader()">
                             Enviar solicitação
                         </button>
                     </div>

@@ -62,7 +62,7 @@ require_once('template/header_home.php');
                         </a>
                     </div>
                     <div class="div-button">
-                        <button type="submit" class="btn btn-primary btn-sm mt-2" name="user_register">
+                        <button type="submit" class="btn btn-primary btn-sm mt-2" name="user_register" onclick="showLoader()">
                             Cadastrar
                         </button>
                     </div>
