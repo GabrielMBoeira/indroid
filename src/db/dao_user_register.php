@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require_once('../api/mercadopago.php');
 require_once(dirname(__FILE__) . '/connection.php');
 require_once(dirname(__FILE__) . '/../functions/functions.php');
 
@@ -17,6 +17,15 @@ $status = 'pending';
 $email_exist = getEmail($email);
 
 if ($email_exist) {
+
+    //Se já gerou ticket mas está pendente
+    if ($ticketUrl = getTicketUrlbyEmail($email_exist['email'])) {
+        $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> E-mail já foi cadastrado (liberação está pendente)! <a href='$ticketUrl' class='alert-link'>Liberar acesso!</a></div>";
+        header('location: ../../user_register');
+        die;
+
+    }
+
     $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Este e-mail já está cadastrado!</div>";
     header('location: ../../user_register');
     die;
@@ -35,10 +44,13 @@ if ($checkbox === 'on') {
     //Criptografando senha
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (email, phone, password, status) VALUES (?, ?, ?, ?)";
+    //Integração com mercado pago
+    $payment = mercadoPagoBuilderPayment($email, 1, 1.00);
+    $payment_ticket_url = $payment->point_of_interaction->transaction_data->ticket_url;
 
+    $sql = "INSERT INTO users (email, phone, password, status, payment_id) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ssss', $email, $phone, $passwordHash, $status);
+    $stmt->bind_param('ssssi', $email, $phone, $passwordHash, $status, $payment->id);
 
     if ($stmt->execute()) {
 
@@ -46,7 +58,7 @@ if ($checkbox === 'on') {
         $_SESSION['userID'] = $userID;
 
         $_SESSION['register_msg'] =  "<div class='alert alert-success m-1' role='alert'>Registro cadastrado com sucesso. <a href='login' class='alert-link'>Acesse Login!</a> </div>";
-        header('location: ../../user_register');
+        header("location: ". $payment_ticket_url ."");
     } else {
 
         $_SESSION['register_msg'] =  "<div class='alert alert-danger m-1' role='alert'> Entre em contato com suporte </div>";

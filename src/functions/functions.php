@@ -331,5 +331,28 @@ function setQtdAccessUser($id, $user_qtd_access) {
     }
 
     $conn->close();
+}
 
+function getTicketUrlbyEmail($email) {
+
+    $conn = Connection::newConnection();
+
+    $sql = "
+            select m.payment_info 
+            from users u 
+            join mercadopago m 
+                on m.payment_id = u.payment_id 
+            where m.status = 'pending'
+                and u.status = 'pending'
+                and u.email = ?
+    ";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('s', $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $payment_info = json_decode($result->fetch_object()->payment_info);
+    $conn->close();
+
+    return $payment_info->point_of_interaction->transaction_data->ticket_url;
 }
