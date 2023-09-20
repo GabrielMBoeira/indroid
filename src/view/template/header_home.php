@@ -14,6 +14,11 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <!-- loader -->
+  <link rel="stylesheet" href="src/assets/css/loader.css">
+  <script src="src/js/loader.js"></script>
+
+
    <!-- Meta Pixel Code -->
    <script>
       // ! function(f, b, e, v, n, t, s) {
@@ -45,6 +50,11 @@
 </head>
 
 <body class="body">
+
+   <!-- Loader -->
+   <div class="loader-overlay">
+      <div class="loader"></div>
+   </div>
 
    <header class="header">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

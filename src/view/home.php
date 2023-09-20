@@ -49,29 +49,6 @@ require_once('template/header_home.php');
    </div>
 </main>
 
-
- <!-- Modal -->
- <div class="modal fade modal-answer" id="answerModal" tabindex="-1" role="dialog" aria-labelledby="answerModalTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">
-                        <strong><i>Como Jogar!!!</i></strong>
-                    </h5>
-                </div>
-                <div class="modal-body">
-                    <div class="box-modal-body">
-                        <div class="box-answer" id="box-answer"></div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" onclick="clearGame()">Próximo</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 <script src="src/js/slider-items.js"></script>
 
 <?php
