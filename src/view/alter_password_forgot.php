@@ -35,6 +35,8 @@ if (isset($_GET['user']) && isset($_GET['key'])) {
         <div class="container-fluid">
             <div class="row">
                 <form class="form" action="src/db/dao_alter_password_forgot.php" method="post">
+                    <input type="hidden" name="user" value="<?= $user ?>">
+                    <input type="hidden" name="key" value="<?= $key ?>">
                     <input type="hidden" name="userID" value="<?= $userID ?>">
                     <div class="header-form">
                         <label>

@@ -7,6 +7,8 @@ require_once('../functions/functions.php');
 
 $conn = Connection::newConnection();
 
+$user = mysqli_real_escape_string($conn, $_POST['user']);
+$key = mysqli_real_escape_string($conn, $_POST['key']);
 $userID = mysqli_real_escape_string($conn, $_POST['userID']);
 $password = mysqli_real_escape_string($conn, $_POST['password']);
 $password_confirm = mysqli_real_escape_string($conn, $_POST['password_cofirm']);
@@ -35,7 +37,7 @@ if ($password === $password_confirm) {
 } else {
 
     $_SESSION['alter_password-forgot-msg'] =  "<div class='alert alert-danger m-1' role='alert'> Senhas não conferem! </div>";
-    header('location: ../../alter_password_forgot');
+    header('location: ../../alter_password_forgot?user='.$user.'&key='.$key.'');
     
 }
 
