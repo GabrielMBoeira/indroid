@@ -17,6 +17,8 @@ if (isset($_POST['login'])) {
 
     if ($checkPass && $email == 'gabrielmboeira@gmail.com') {
         $_SESSION['adm_prog'] = 'adm_check';
+        $userID = $checkPass['id'];
+        $_SESSION['userID'] = $userID;
         header('location: ../../users');
         die;
     }

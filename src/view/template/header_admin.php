@@ -40,6 +40,9 @@
          <div class="collapse navbar-collapse" id="content-nav">
             <ul class="navbar-nav  w-100">
                <li class="nav-item active  mr-2">
+                  <a class="nav-link" href="question">Perguntar</a>
+               </li>
+               <li class="nav-item active  mr-2">
                   <a class="nav-link" href="users">Lista de usuarios</a>
                </li>
                <li class="nav-item active mr-2">
