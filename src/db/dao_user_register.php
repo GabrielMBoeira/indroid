@@ -44,7 +44,7 @@ if ($checkbox === 'on') {
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
     //Integração com mercado pago
-    $payment = mercadoPagoBuilderPayment($email, 1, 1.00);
+    $payment = mercadoPagoBuilderPayment($email, 1, 5.00);
     $payment_ticket_url = $payment->point_of_interaction->transaction_data->ticket_url;
 
     $sql = "INSERT INTO users (email, phone, password, status, payment_id) VALUES (?, ?, ?, ?, ?)";
