@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.vue';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Fredoka', ui-sans-serif, system-ui, sans-serif;
+    --color-ink: #06283d;
+    --color-panel: #0b4f6c;
+    --color-neon: #f4a261;
+    --color-violet: #e9c46a;
+    --color-glow: #2a9d8f;
+}
+
+@layer base {
+    html,
+    body {
+        min-height: 100%;
+        background: #06283d;
+        color: #fff7ed;
+    }
+
+    body {
+        font-family: var(--font-sans);
+    }
+}
+
+@utility font-display {
+    font-family: var(--font-display);
+}
+
+@utility glass-card {
+    background: linear-gradient(180deg, rgb(11 79 108 / 0.82), rgb(6 40 61 / 0.88));
+    border: 1px solid rgb(255 247 237 / 0.16);
+    box-shadow: 0 20px 80px rgb(42 157 143 / 0.16);
+    backdrop-filter: blur(18px);
+}
+
+@utility neon-border {
+    box-shadow: 0 0 0 1px rgb(244 162 97 / 0.45), 0 0 40px rgb(244 162 97 / 0.18);
+}
