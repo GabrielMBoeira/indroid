@@ -9,7 +9,7 @@ const submit = () => form.post('/esqueci-senha');
 
 <template>
     <Head title="Recuperar senha" />
-    <AppLayout background="/images/circuit.jpg">
+    <AppLayout background="/images/ixtepo-beach.jpg">
         <div class="mx-auto max-w-lg px-4 py-16">
             <form class="glass-card rounded-3xl p-8" @submit.prevent="submit">
                 <FlashMessage title="Recuperação de senha" subtitle="Informe o e-mail cadastrado para receber o link." />

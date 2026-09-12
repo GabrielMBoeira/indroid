@@ -10,8 +10,8 @@ export default defineConfig({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
             fonts: [
-                bunny('Orbitron', { weights: [500, 700, 800], optimizedFallbacks: false }),
-                bunny('Manrope', { weights: [400, 500, 600, 700, 800], optimizedFallbacks: false }),
+                bunny('Fredoka', { weights: [500, 600, 700], optimizedFallbacks: false }),
+                bunny('Nunito', { weights: [400, 600, 700, 800], optimizedFallbacks: false }),
             ],
         }),
         vue({

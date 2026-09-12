@@ -12,7 +12,7 @@ const remove = (id) => router.delete(`/admin/mensagens/${id}`);
 
 <template>
     <Head title="Mensagens" />
-    <AppLayout background="/images/tech.jpg">
+    <AppLayout background="/images/ixtepo-friends.jpg">
         <div class="mx-auto max-w-6xl px-4 py-10">
             <FlashMessage />
             <div class="overflow-x-auto rounded-3xl glass-card">

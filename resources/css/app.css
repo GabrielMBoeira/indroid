@@ -6,21 +6,21 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
-    --font-display: 'Orbitron', ui-sans-serif, system-ui, sans-serif;
-    --color-ink: #050814;
-    --color-panel: #0b1224;
-    --color-neon: #22d3ee;
-    --color-violet: #a78bfa;
-    --color-glow: #67e8f9;
+    --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Fredoka', ui-sans-serif, system-ui, sans-serif;
+    --color-ink: #06283d;
+    --color-panel: #0b4f6c;
+    --color-neon: #f4a261;
+    --color-violet: #e9c46a;
+    --color-glow: #2a9d8f;
 }
 
 @layer base {
     html,
     body {
         min-height: 100%;
-        background: #050814;
-        color: #e2e8f0;
+        background: #06283d;
+        color: #fff7ed;
     }
 
     body {
@@ -33,12 +33,12 @@
 }
 
 @utility glass-card {
-    background: linear-gradient(180deg, rgb(15 23 42 / 0.78), rgb(2 6 23 / 0.86));
-    border: 1px solid rgb(255 255 255 / 0.12);
-    box-shadow: 0 20px 80px rgb(34 211 238 / 0.08);
+    background: linear-gradient(180deg, rgb(11 79 108 / 0.82), rgb(6 40 61 / 0.88));
+    border: 1px solid rgb(255 247 237 / 0.16);
+    box-shadow: 0 20px 80px rgb(42 157 143 / 0.16);
     backdrop-filter: blur(18px);
 }
 
 @utility neon-border {
-    box-shadow: 0 0 0 1px rgb(34 211 238 / 0.35), 0 0 40px rgb(34 211 238 / 0.12);
+    box-shadow: 0 0 0 1px rgb(244 162 97 / 0.45), 0 0 40px rgb(244 162 97 / 0.18);
 }

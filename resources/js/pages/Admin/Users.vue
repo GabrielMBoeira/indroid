@@ -19,7 +19,7 @@ const activate = (id) => router.post(`/admin/usuarios/${id}/liberar`);
 
 <template>
     <Head title="Usuários" />
-    <AppLayout background="/images/circuit.jpg">
+    <AppLayout background="/images/ixtepo-sunset.jpg">
         <div class="mx-auto max-w-6xl px-4 py-10">
             <FlashMessage />
             <div class="mb-4 rounded-2xl bg-black/60 py-3 text-center font-display tracking-widest text-white">Liberar usuário</div>

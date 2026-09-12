@@ -20,7 +20,7 @@ const submit = () => form.post('/redefinir-senha');
 
 <template>
     <Head title="Redefinir senha" />
-    <AppLayout background="/images/tech.jpg">
+    <AppLayout background="/images/ixtepo-think.jpg">
         <div class="mx-auto max-w-lg px-4 py-16">
             <form class="glass-card rounded-3xl p-8" @submit.prevent="submit">
                 <FlashMessage title="Alterar senha" />

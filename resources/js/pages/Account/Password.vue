@@ -13,7 +13,7 @@ const submit = () => form.put('/alterar-senha');
 
 <template>
     <Head title="Alterar senha" />
-    <AppLayout background="/images/tech.jpg">
+    <AppLayout background="/images/ixtepo-think.jpg">
         <div class="mx-auto max-w-lg px-4 py-16">
             <form class="rounded-3xl glass-card p-8" @submit.prevent="submit">
                 <FlashMessage title="Alterar senha" />

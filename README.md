@@ -1,6 +1,8 @@
-# inDROID
+# Manezinho Ixtepô
 
-Aplicação web do **inDROID** — jogo de perguntas e respostas para impressionar os amigos — reescrita em **Laravel + Vue 3 + Inertia + Tailwind CSS**.
+Aplicação web do **Manezinho Ixtepô** — o pescador mais brincalhão da Ilha da Magia — em **Laravel + Vue 3 + Inertia + Tailwind CSS**.
+
+Jogo de perguntas e respostas para impressionar os amigos, com visual de manezinho catarinense.
 
 ## Stack
 
@@ -55,10 +57,10 @@ O document root do servidor deve apontar para `public/`.
 
 ## Funcionalidades
 
-- Home com imagens do robô e texto animado
+- Home com o Ixtepô (pescador estilo Pixar) e texto animado
 - Cadastro, login, recuperação e alteração de senha
 - Termo de responsabilidade e página de contato
-- Jogo **Perguntar** (o robô “adivinha” a resposta digitada em segredo)
+- Jogo **Perguntar** (o manezinho “adivinha” a resposta digitada em segredo)
 - Liberação de cadastro via Mercado Pago (PIX quando `MERCADOPAGO_ACCESS_TOKEN` estiver definido)
 - Painel admin para liberar usuários e ler mensagens
 

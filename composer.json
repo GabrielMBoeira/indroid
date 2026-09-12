@@ -2,8 +2,8 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "gabrielmboeira/indroid",
     "type": "project",
-    "description": "inDROID — jogo de perguntas e respostas em Laravel, Vue, Inertia e Tailwind.",
-    "keywords": ["laravel", "vue", "inertia", "indroid"],
+    "description": "Manezinho Ixtepô — jogo de perguntas e respostas em Laravel, Vue, Inertia e Tailwind.",
+    "keywords": ["laravel", "vue", "inertia", "manezinho", "ixtepo"],
     "license": "MIT",
     "require": {
         "php": "^8.3",

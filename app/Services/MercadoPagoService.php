@@ -22,7 +22,7 @@ class MercadoPagoService
             ->acceptJson()
             ->post('https://api.mercadopago.com/v1/payments', [
                 'transaction_amount' => $amount,
-                'description' => 'Acesso inDROID',
+                'description' => 'Acesso Manezinho Ixtepô',
                 'payment_method_id' => 'pix',
                 'payer' => [
                     'email' => $user->email,

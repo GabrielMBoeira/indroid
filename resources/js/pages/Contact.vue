@@ -13,10 +13,10 @@ const submit = () => form.post('/contato');
 
 <template>
     <Head title="Contato" />
-    <AppLayout background="/images/circuit.jpg">
+    <AppLayout background="/images/ixtepo-friends.jpg">
         <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 lg:grid-cols-2">
             <div class="overflow-hidden rounded-3xl glass-card">
-                <img src="/images/friends.jpg" alt="Equipe pronta para atender" class="h-48 w-full object-cover" />
+                <img src="/images/ixtepo-beach.jpg" alt="Ixtepô na praia de Florianópolis" class="h-48 w-full object-cover" />
                 <div class="p-6">
                     <h2 class="font-display text-xl text-white">Localização</h2>
                     <div class="mt-4 overflow-hidden rounded-2xl">
@@ -28,7 +28,7 @@ const submit = () => form.post('/contato');
                             allowfullscreen
                         ></iframe>
                     </div>
-                    <p class="mt-4 text-sm italic text-slate-300">
+                    <p class="mt-4 text-sm italic text-orange-100">
                         Rua: Av. Trompowsky, 354<br>
                         Bairro: Centro<br>
                         Cidade: Florianópolis<br>
@@ -39,12 +39,12 @@ const submit = () => form.post('/contato');
             </div>
 
             <form class="rounded-3xl glass-card p-8" @submit.prevent="submit">
-                <FlashMessage title="Contato" subtitle="Tire dúvidas sobre o uso da aplicação. Retornamos assim que visualizarmos a mensagem." />
+                <FlashMessage title="Contato" subtitle="Manda um recado pro Ixtepô. Retornamos assim que visualizarmos a mensagem." />
                 <label class="mb-2 block text-sm">Informe seu email</label>
-                <input v-model="form.email" type="email" required class="mb-4 w-full rounded-xl border border-white/15 bg-black/30 px-4 py-3 outline-none focus:border-neon" />
+                <input v-model="form.email" type="email" required class="mb-4 w-full rounded-xl border border-white/15 bg-ink/40 px-4 py-3 outline-none focus:border-neon" />
                 <p v-if="form.errors.email" class="mb-3 text-sm text-rose-300">{{ form.errors.email }}</p>
                 <label class="mb-2 block text-sm">Mensagem</label>
-                <textarea v-model="form.message" maxlength="300" required rows="4" class="mb-6 w-full rounded-xl border border-white/15 bg-black/30 px-4 py-3 outline-none focus:border-neon"></textarea>
+                <textarea v-model="form.message" maxlength="300" required rows="4" class="mb-6 w-full rounded-xl border border-white/15 bg-ink/40 px-4 py-3 outline-none focus:border-neon"></textarea>
                 <p v-if="form.errors.message" class="mb-3 text-sm text-rose-300">{{ form.errors.message }}</p>
                 <button class="w-full rounded-full bg-neon py-3 font-bold text-ink" :disabled="form.processing">Enviar</button>
             </form>

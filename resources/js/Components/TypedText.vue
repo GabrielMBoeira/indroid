@@ -4,7 +4,12 @@ import { onBeforeUnmount, onMounted, ref } from 'vue';
 const props = defineProps({
     items: {
         type: Array,
-        default: () => ['Surpreenda seus amigos', 'Divirta-se', 'Impressione', 'O Robô mais inteligente da web'],
+        default: () => [
+            'Ixtepô, tchê!',
+            'O manezinho mais esperto da ilha',
+            'Surpreenda a galera',
+            'Pesca a resposta na hora',
+        ],
     },
 });
 
