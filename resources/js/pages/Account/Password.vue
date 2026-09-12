@@ -1,0 +1,29 @@
+<script setup>
+import { Head, useForm } from '@inertiajs/vue3';
+import AppLayout from '../../Layouts/AppLayout.vue';
+import FlashMessage from '../../Components/FlashMessage.vue';
+
+const form = useForm({
+    password: '',
+    password_confirmation: '',
+});
+
+const submit = () => form.put('/alterar-senha');
+</script>
+
+<template>
+    <Head title="Alterar senha" />
+    <AppLayout background="/images/tech.jpg">
+        <div class="mx-auto max-w-lg px-4 py-16">
+            <form class="rounded-3xl glass-card p-8" @submit.prevent="submit">
+                <FlashMessage title="Alterar senha" />
+                <label class="mb-2 block text-sm">Nova senha</label>
+                <input v-model="form.password" type="password" required class="mb-4 w-full rounded-xl border border-white/15 bg-black/30 px-4 py-3 outline-none focus:border-neon" />
+                <p v-if="form.errors.password" class="mb-3 text-sm text-rose-300">{{ form.errors.password }}</p>
+                <label class="mb-2 block text-sm">Confirmar nova senha</label>
+                <input v-model="form.password_confirmation" type="password" required class="mb-6 w-full rounded-xl border border-white/15 bg-black/30 px-4 py-3 outline-none focus:border-neon" />
+                <button class="w-full rounded-full bg-neon py-3 font-bold text-ink" :disabled="form.processing">Salvar</button>
+            </form>
+        </div>
+    </AppLayout>
+</template>
